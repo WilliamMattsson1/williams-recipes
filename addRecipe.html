@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Add Recipe | Williams Recipe's</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        />
+    </head>
+    <body>
+        <!-- 1. Navbar Desktop -->
+        <nav class="desktop-nav">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo-removebg-preview.png" alt="logo" />
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="addRecipe.html">Add recipe</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+
+        <!-- 2. Hamburger Navbar -->
+        <nav class="hamburger-nav">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo-removebg-preview.png" alt="logo" />
+                </a>
+            </div>
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="menu-links">
+                <li>
+                    <a href="addRecipe.html" onclick="toggleMenu()"
+                        >Add Recipe</a
+                    >
+                </li>
+                <li>
+                    <a href="about.html" onclick="toggleMenu()">About Us</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- End of Hamburger navbar -->
+
+        <section class="">
+            <h2>Add your own recipe</h2>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-container">
+                <div class="logo">
+                    <a href="#"
+                        ><img src="assets/logo-removebg-preview.png" alt="logo"
+                    /></a>
+                </div>
+
+                <ul class="footer-links">
+                    <li><a href="favorites.html">Favorites</a></li>
+                    <li><a href="addRecipe.html">Add Recipe</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <p class="copyright">Made By @ William Mattsson | IT-Högskolan</p>
+        </footer>
+        <!-- End of footer -->
+
+        <script src="app.js"></script>
+    </body>
+</html>

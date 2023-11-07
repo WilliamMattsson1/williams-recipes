@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <title>Williams Recipe's</title>
+    </head>
+    <body>
+        <!-- 1. Navbar Desktop -->
+        <!-- 2. Navbar Hamburger -->
+        <!-- 3. Favorite meals (mode button)  -->
+        <!-- 4. Search container  -->
+        <!-- 5. Meals  -->
+        <!-- 6. Popup for meals  -->
+        <!-- 7. Footer  -->
+
+        <!--  1. Navbar Desktop -->
+        <nav class="desktop-nav">
+            <div class="logo">
+                <a href="#">
+                    <img src="assets/logo-removebg-preview.png" alt="logo" />
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="addRecipe.html">Add recipe</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+        <!-- End of Desktop nav -->
+
+        <!-- 2. Hamburger Navbar -->
+        <nav class="hamburger-nav">
+            <div class="logo">
+                <a href="#">
+                    <img src="assets/logo-removebg-preview.png" alt="logo" />
+                </a>
+            </div>
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="menu-links">
+                <li>
+                    <a href="addRecipe.html" onclick="toggleMenu()"
+                        >Add Recipe</a
+                    >
+                </li>
+                <li>
+                    <a href="about.html" onclick="toggleMenu()">About Us</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- End of Hamburger navbar -->
+
+        <!-- 3. Favorite meals (mode button) -->
+        <div class="mode-btn">
+            <i class="fa-solid fa-toggle-off"></i>
+        </div>
+
+        <section class="fav-meals-container">
+            <h1>Favorite Meals</h1>
+            <i class="fa-solid fa-arrow-down fav-toggle"></i>
+            <div class="fav-meals">
+                <!-- <div class="fav-meal">
+                        <div class="fav-meal-content">
+                            <div class="fav-meal-img-container">
+                                <img src="" alt="fav-meal image"/>
+                            </div>
+                            <div class=".fav.meal-text">
+                                <p>Meal Name</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-x"></i>
+                    </div> -->
+            </div>
+        </section>
+        <!-- End of favorite meals -->
+
+        <!-- 4. Search container (input, suggestions, randomBtn) -->
+        <section class="user-input">
+            <h2>Find your new favorite recipe</h2>
+            <p>Over 295 different recipes</p>
+            <div class="search-container">
+                <input
+                    class="search-input"
+                    type="text"
+                    placeholder="Search for meals..."
+                />
+                <button class="search-btn">Search</button>
+            </div>
+
+            <!-- Suggestions -->
+            <ul class="suggestions">
+                <li>Chicken</li>
+                <li>Beef</li>
+                <li>Pork</li>
+                <li>SeaFood</li>
+                <li>Dessert</li>
+            </ul>
+            <button class="random-btn">Random Meal</button>
+        </section>
+        <!-- End of search container -->
+
+        <!-- 5. Meals -->
+        <section class="meals-container">
+            <h3 class="meals-h3"></h3>
+            <div class="meals">
+                <!-- <div class="meal-card">
+                    <div class="meal-card-img-container">
+                        <img src="" alt="">
+                    </div>
+                    <div class="meal-name">
+                        <i class="fa-solid fa-utensils"></i>
+                        <p>Meal's Name</p>
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+        <!-- End of meals -->
+
+        <!-- 6. Popup for meals -->
+        <section class="pop-up-container">
+            <div class="pop-up">
+                <h3 class="popup-h2">lala</h3>
+                <i class="fa-solid fa-x"></i>
+                <div class="pop-up-content">
+                    <!-- <div class="left">
+                        <div class="meal-card">
+                            <div class="meal-card-img-container">
+                                <img src="${meal.strMealThumb}" alt="recipe foto">
+                            </div>
+                            <div class="meal-name">
+                                <p>${meal.strMeal}</p>
+                                <i class="fa-regular fa-heart"></i>
+                            </div>
+                        </div>
+                        <div class="ingredients-div">
+                            <h2>Ingredients / Measures</h2>
+                            <ul>
+                                ${ingredients.map((i) => `<li>${i}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div>
+                            <h2>Intructions</h2>
+                            <p class="meal-info">${meal.strInstructions}</p>
+                        </div>
+
+                    </div> -->
+                </div>
+            </div>
+        </section>
+        <!-- End of popup -->
+
+        <!-- 7. Footer -->
+        <footer>
+            <div class="footer-container">
+                <div class="logo">
+                    <a href="#"
+                        ><img src="assets/logo-removebg-preview.png" alt="logo"
+                    /></a>
+                </div>
+
+                <ul class="footer-links">
+                    <li><a href="favorites.html">Favorites</a></li>
+                    <li><a href="addRecipe.html">Add Recipe</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <p class="copyright">Made By @ William Mattsson | IT-Högskolan</p>
+        </footer>
+        <!-- End of footer -->
+
+        <script src="app.js"></script>
+    </body>
+</html>

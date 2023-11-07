@@ -1,0 +1,691 @@
+/* * 1. General (font, *, body, html, var, modeBtn class) */
+/* * 2. Desktop Nav */
+/* * 3. Hamburger Nav */
+/* * 4. Favorite Meals (modeBtn, scrollbar) */
+/* * 5. Search input (searchContainer, suggestions, randomBtn) */
+/* * 6. Meals (H2, meals, card(text and icons) ) */
+/* * 7.Footer */
+/* * 8. Pop up () */
+
+/* * 9. About Us (chart) */
+
+/* * 1. General (font, *, body, html, var) */
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg1-color);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    /* First set of colors */
+    --bg1-color: #eff1f7;
+    --txt1-color: #000000;
+    --nav-color: #38b6ff;
+
+    /* second set of colors */
+    --bg2-color: #352f44;
+    --txt2-color: #000000;
+    /* ! Byt ut tct2 color till en bra mörk färg.  */
+}
+
+/* Toggle this class when mode button clicks (changes colors) */
+.dark-mode {
+    /* First set of colors */
+    --bg1-color: #231e1a;
+    --txt1-color: #000000;
+    --nav-color: #feb72b;
+
+    /* second set of colors */
+    --bg2-color: #352f44;
+    --txt2-color: #ffffff;
+    --txt3--color: #ffffff;
+}
+
+/* * 2. Desktop Nav */
+nav,
+.nav-links {
+    display: flex;
+}
+
+nav {
+    justify-content: space-between;
+    align-items: center;
+    min-height: 7vh;
+    background-color: var(--nav-color);
+    opacity: 0.9;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    padding: 0 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.nav-links {
+    gap: 3rem;
+    list-style: none;
+    font-size: 1.4rem;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: 400;
+    color: var(--txt1-color);
+}
+
+nav a:hover {
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    font-weight: 500;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+}
+
+.logo img {
+    width: 100%;
+    overflow: hidden;
+    transition: 200ms ease-in-out;
+}
+
+.logo img:active {
+    scale: 0.7;
+}
+
+/* * 3. Hamburger Nav  */
+
+.hamburger-nav {
+    display: none;
+}
+
+.hamburger-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.hamburger-icon span {
+    width: 100%;
+    height: 2px;
+    background-color: var(--txt1-color);
+    transition: all 500ms ease;
+}
+
+.menu-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--nav-color);
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 300ms ease;
+}
+
+.menu-links a {
+    display: block;
+    padding: 8px;
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--txt1-color);
+    text-decoration: none;
+    transition: all 500ms ease-in-out;
+}
+
+.menu-links li {
+    list-style: none;
+}
+
+.menu-links.open {
+    max-height: 300px;
+    width: 100%;
+}
+
+.hamburger-icon.open span:first-child {
+    /* Make first span rotate */
+    transform: rotate(45deg) translate(10px, 5px);
+}
+
+.hamburger-icon.open span:nth-child(2) {
+    /* Makes second span invisible */
+    opacity: 0;
+}
+
+.hamburger-icon.open span:last-child {
+    /* Makes last span rotate 45deg the other way */
+    transform: rotate(-45deg) translate(10px, -5px);
+} /* Make the hamburger menu look like a X */
+
+/* * 4. Favorite Meals (modeBtn, toggleClass, scrollbar) */
+
+/* Mode-btn */
+.mode-btn > i {
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-left: 4rem;
+    cursor: pointer;
+    color: var(--txt2-color);
+    transition: 200ms ease-in-out;
+}
+
+/* Center text */
+.fav-meals-container {
+    text-align: center;
+    border-radius: 8px;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    background-color: var(--nav-color);
+    position: relative;
+    height: 2.4rem;
+    overflow-y: hidden;
+}
+
+/* position meals next to each, and add scrollbar */
+.fav-meals {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    overflow-x: scroll;
+    padding: 0.5rem;
+}
+
+/* Position the arrow */
+.fav-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+/* Position favorite meal */
+.fav-meal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 78px;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    background-color: var(--bg1-color);
+    /* ?     position: relative;
+ */
+    transition: 300ms ease-in-out;
+}
+
+/* Center fav meal */
+.fav-meal .fav-meal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*   ?  justify-content: center;
+ */
+}
+
+/* Sizing the img */
+.fav-meal-img-container {
+    width: 60px;
+    height: 60px;
+    margin-top: 0.4rem;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+/* Position the img right */
+.fav-meal-img-container img {
+    width: 100%;
+}
+
+/* Fix overflow */
+.fav-meal-text p {
+    width: 80px;
+    font-size: 0.7rem;
+    padding-left: 0.4rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: var(--txt2-color);
+    transition: 300ms ease-in-out;
+}
+
+/* Space the X btn and fix hover bugs */
+.fa-x {
+    color: white;
+    background-color: var(--txt1-color);
+    border-bottom-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    width: 100%;
+    padding: 0.6rem;
+}
+
+/* Change color when hovered */
+.fav-meal:hover {
+    background-color: var(--txt1-color);
+}
+
+/* Change color on text when fav-meal is hovered */
+.fav-meal:hover .fav-meal-text p {
+    color: white;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+/* Color */
+::-webkit-scrollbar-thumb {
+    background-color: var(--txt1-color);
+    border-radius: 3rem;
+}
+
+/* * 5. Search input (searchContainer, suggestions, randomBtn) */
+
+/* Position the whole container */
+.user-input {
+    background-color: var(--nav-color);
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Position the search input container */
+.search-container {
+    background: white;
+    display: flex;
+    width: fit-content;
+    margin: auto;
+    margin-top: 0.4rem;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Style input */
+.search-container input {
+    border: none;
+    outline: none;
+    padding: 0.6rem;
+    height: 3rem;
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 6px;
+}
+
+.search-container button {
+    background-color: var(--txt1-color);
+    color: white;
+    padding: 1rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 0 6px 6px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.suggestions {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 0.6rem;
+    font-weight: 600;
+}
+
+.suggestions li {
+    cursor: pointer;
+}
+
+.suggestions li:hover {
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.6rem;
+}
+
+.random-btn {
+    background-color: var(--txt1-color);
+    color: white;
+    padding: 0.6rem;
+    margin-top: 0.6rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Make it bigger */
+.random-btn:hover {
+    scale: 1.1;
+}
+
+/* * 6. Meals (H2, meals, card(text and icons) ) */
+
+/* Style the h2 */
+.meals-h3 {
+    color: var(--txt2-color);
+    text-align: center;
+    margin-top: 0.6rem;
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+/* Puts them next to each other, center and gap */
+.meals {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.4rem;
+    padding: 0.6rem;
+    min-height: 32vh;
+}
+
+/* Size the meal cards and fix border-radius */
+.meal-card {
+    width: clamp(300px, 30%, 400px);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    background-color: white;
+    transition: 200ms ease-in-out;
+}
+
+/* position the image right */
+.meal-card-img-container {
+    width: 100%;
+    height: 300px;
+    cursor: pointer;
+}
+
+/* Get the img right */
+.meal-card-img-container img {
+    width: 100%;
+    height: 100%;
+}
+
+/* center and position the icons and h2 */
+.meal-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem;
+    font-size: 1.2rem;
+    transition: 200ms ease-in-out color;
+}
+
+/* Make text smaller */
+.meal-name p {
+    font-size: 0.8rem;
+}
+
+/* utensils btn */
+.meal-name i:nth-child(1) {
+    cursor: pointer;
+    padding-right: 0.4rem;
+}
+
+/* fav btn */
+.meal-name i:nth-child(3) {
+    color: red;
+    cursor: pointer;
+}
+
+/* Color change when hovered, and jump */
+.meal-card:hover {
+    background-color: var(--txt1-color);
+    scale: 1.1;
+}
+
+/* Text color change when hovered */
+.meal-card:hover .meal-name {
+    color: white;
+}
+
+/* * 7.Footer */
+footer {
+    background-color: var(--nav-color);
+    opacity: 0.9;
+    margin-top: 1rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 0.6rem;
+}
+
+footer .logo {
+    height: 80px;
+    width: 80px;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.footer-links li a {
+    text-decoration: none;
+    color: var(--txt1-color);
+}
+
+footer p {
+    padding-bottom: 0.6rem;
+    text-align: center;
+}
+
+/* * 8. Pop up () */
+
+/* Position pop up */
+.pop-up-container {
+    position: fixed;
+    inset: 0;
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* as default it will be hidden */
+    display: none;
+}
+
+/* Position the pop-up */
+.pop-up {
+    width: 90%;
+    max-height: 85vh;
+    background-color: var(--bg1-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    color: var(--txt2-color);
+    padding: 3rem;
+    margin-top: 4rem;
+    border-radius: 8px;
+    overflow: scroll;
+    position: relative;
+}
+
+.popup-h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+}
+
+/* Style the X */
+.pop-up i {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: auto;
+    background-color: transparent;
+    color: var(--txt1-color);
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+/* Make the content left and right  */
+.pop-up-content {
+    display: flex;
+    gap: 2rem;
+}
+
+/* Make the fav button invisible */
+.pop-up .left i {
+    display: none;
+}
+
+/* Fix the problem with text over img */
+.left > div > div.meal-card-img-container {
+    width: 300px;
+}
+
+.ingredients-div {
+    margin-top: 1.6rem;
+}
+
+/* Moves the bulletpoints */
+.left ul li {
+    list-style-position: inside;
+}
+
+/* Gives it little space */
+.right {
+    padding: 1rem;
+}
+
+/* * 9. About Us (chart) */
+.about-container {
+    text-align: center;
+    margin-top: 2rem;
+    min-height: 80vh; /* To push down the footer */
+}
+
+.about-container h2 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.about-text h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.about-text {
+    background-color: var(--nav-color);
+    border-radius: 8px;
+    width: 70%;
+    margin: auto;
+    margin-top: 2rem;
+    padding: 0.6rem 2rem;
+    line-height: 1.8;
+}
+
+.chart {
+    margin: auto;
+    margin-top: 1rem;
+    width: 100%;
+    height: 50vh;
+    margin-bottom: 4rem;
+}
+
+#my-chart {
+    margin: auto;
+    min-height: 100%;
+}
+
+/* * Mediaqueries */
+@media only screen and (max-width: 800px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .hamburger-nav {
+        display: flex;
+        margin-bottom: 1.2rem;
+    }
+
+    /* Puts it in the nav and sticky */
+    .mode-btn {
+        z-index: 2;
+        position: fixed;
+        top: 5px;
+        left: 7rem;
+    }
+
+    .fav-meals-container {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .user-input {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .suggestions {
+        gap: 1rem;
+    }
+
+    .pop-up {
+        padding: 1rem;
+    }
+
+    .popup-h2 {
+        padding-right: 2.2rem;
+        margin-top: 0.4rem;
+    }
+
+    .pop-up-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 0.6rem 0;
+    }
+
+    .right {
+        padding: 0.6rem;
+    }
+
+    footer .logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .footer-links li a {
+        font-size: 0.9rem;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}

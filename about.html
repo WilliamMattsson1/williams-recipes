@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>About Us | Williams Recipe's</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        />
+    </head>
+    <body>
+        <!-- 1. Navbar Desktop -->
+        <nav class="desktop-nav">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo-removebg-preview.png" alt="logo" />
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="addRecipe.html">Add recipe</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+
+        <!-- 2. Hamburger Navbar -->
+        <nav class="hamburger-nav">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo-removebg-preview.png" alt="logo" />
+                </a>
+            </div>
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="menu-links">
+                <li>
+                    <a href="addRecipe.html" onclick="toggleMenu()"
+                        >Add Recipe</a
+                    >
+                </li>
+                <li>
+                    <a href="about.html" onclick="toggleMenu()">About Us</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- End of Hamburger navbar -->
+
+        <!--  -->
+        <section class="about-container">
+            <h2>About us</h2>
+            <h3>William's food recipes</h3>
+
+            <div class="about-text">
+                <h4>We have a lot of recipes</h4>
+                <p>
+                    Discover a culinary gem! Our website boasts a vast
+                    collection of mouthwatering recipes, precise measurements,
+                    and step-by-step instructions. Elevate your cooking game
+                    with us, whether you're a beginner or a experienced chef.
+                </p>
+            </div>
+
+            <div class="chart">
+                <h4>Here is a chart</h4>
+                <p>For all different categories</p>
+                <canvas id="my-chart"></canvas>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-container">
+                <div class="logo">
+                    <a href="#"
+                        ><img src="assets/logo-removebg-preview.png" alt="logo"
+                    /></a>
+                </div>
+
+                <ul class="footer-links">
+                    <li><a href="favorites.html">Favorites</a></li>
+                    <li><a href="addRecipe.html">Add Recipe</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <p class="copyright">Made By @ William Mattsson | IT-Högskolan</p>
+        </footer>
+        <!-- End of footer -->
+
+        <!--         <script src="chart.js"></script>
+ -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="app.js"></script>
+        <script>
+            // * To display how many meals we have for every category
+
+            let categoryNames = []
+            let mealsQuantity = []
+            const ctx = document.getElementById('my-chart')
+
+            // Get all categories and create the chart
+            async function fetchCategories() {
+                try {
+                    const response = await fetch(
+                        'https://www.themealdb.com/api/json/v1/1/list.php?c=list'
+                    )
+                    const data = await response.json()
+                    const categories = data.meals
+                    categoryNames = categories.map(
+                        (category) => category.strCategory
+                    )
+
+                    for (let i = 0; i < categoryNames.length; i++) {
+                        await getQuantity(categoryNames[i])
+                    }
+
+                    console.log(categoryNames)
+                    console.log(mealsQuantity)
+
+                    createChart() // Create the chart after fetching data
+                } catch (error) {
+                    console.log('Something went wrong:', error)
+                }
+            }
+
+            // get the meals from the (categoryName)
+            async function getQuantity(categoryName) {
+                try {
+                    const response = await fetch(
+                        `https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoryName}`
+                    )
+                    const data = await response.json()
+                    const category = data.meals
+                    let quantity = category.length
+                    mealsQuantity.push(quantity)
+                } catch (error) {
+                    console.log('Something went wrong:', error)
+                }
+            }
+
+            // Function to create the chart
+            function createChart() {
+                const colorPalette = [
+                    'rgba(255, 99, 132, 0.4)',
+                    'rgba(54, 162, 235, 0.4)',
+                    'rgba(255, 206, 86, 0.4)',
+                    'rgba(75, 192, 192, 0.4)',
+                    'rgba(153, 102, 255, 0.4)',
+                    'rgba(255, 159, 64, 0.4)',
+                    'rgba(200, 0, 0, 0.4)',
+                    'rgba(0, 200, 0, 0.4)',
+                    'rgba(0, 0, 200, 0.4)',
+                    'rgba(200, 200, 0, 0.4)',
+                    'rgba(200, 0, 200, 0.4)',
+                    'rgba(0, 200, 200, 0.4)',
+                    'rgba(100, 100, 100, 0.4)',
+                    'rgba(180, 180, 180, 0.4)'
+                ]
+
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: categoryNames,
+                        datasets: [
+                            {
+                                label: 'Number of meals',
+                                data: mealsQuantity,
+                                backgroundColor: colorPalette, // 0.2
+                                borderColor: colorPalette, // 1
+                                borderWidth: 2,
+                                borderRadius: 6
+                            }
+                        ]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    font: {
+                                        weight: 'bold',
+                                        size: 14
+                                    }
+                                }
+                            },
+                            x: {
+                                ticks: {
+                                    font: {
+                                        weight: 'bold',
+                                        size: 14
+                                    }
+                                }
+                            }
+                        }
+                    }
+                })
+            }
+
+            // Start the process
+            fetchCategories()
+        </script>
+    </body>
+</html>

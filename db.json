@@ -1,0 +1,46 @@
+{
+  "meals": [
+    {
+      "id": 0,
+      "name": "Pastapasta",
+      "img": "https://www.themealdb.com/images/media/meals/kw92t41604181871.jpg",
+      "instructins": "lalalalalalala",
+      "ingredients": "jajajajaja"
+    },
+    {
+      "id": 1,
+      "name": "Pastapasta",
+      "img": "https://www.themealdb.com/images/media/meals/kw92t41604181871.jpg",
+      "instructins": "lalalalalalala",
+      "ingredients": "jajajajaja"
+    },
+    {
+      "id": 2,
+      "name": "Pastapasta",
+      "img": "https://www.themealdb.com/images/media/meals/kw92t41604181871.jpg",
+      "instructins": "lalalalalalala",
+      "ingredients": "jajajajaja"
+    },
+    {
+      "id": 3,
+      "name": "Pastapasta",
+      "img": "https://www.themealdb.com/images/media/meals/kw92t41604181871.jpg",
+      "instructins": "lalalalalalala",
+      "ingredients": "jajajajaja"
+    },
+    {
+      "id": 4,
+      "name": "Pastapasta",
+      "img": "https://www.themealdb.com/images/media/meals/kw92t41604181871.jpg",
+      "instructins": "lalalalalalala",
+      "ingredients": "jajajajaja"
+    },
+    {
+      "id": 5,
+      "name": "Pastapasta",
+      "img": "https://www.themealdb.com/images/media/meals/kw92t41604181871.jpg",
+      "instructins": "lalalalalalala",
+      "ingredients": "jajajajaja"
+    }
+  ]
+}

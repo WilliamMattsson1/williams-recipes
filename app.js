@@ -148,13 +148,23 @@ async function fetchMealsByCategory(category) {
         console.log(meals)
 
         if (meals) {
+            meals.forEach(async (meal) => {
+                const id = meal.idMeal
+                const fetchedMeal = await fetchMealById(id)
+                displayMeal(fetchedMeal)
+            })
+            // Change the text from random meal to this
+            mealsH3.innerText = `Search results for: ${category}`
+        }
+
+        /* if (meals) {
             meals.forEach((meal) => {
                 displayMeal(meal)
             })
 
             // Change the text from random meal to this
             mealsH3.innerText = `Search results for: ${category}`
-        }
+        } */
 
         // If there isnt any search results.
         else {

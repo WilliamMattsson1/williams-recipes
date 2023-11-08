@@ -51,6 +51,7 @@ async function showResults() {
     const searchValue = searchInput.value
     const meals = await fetchMealBySearch(searchValue) // Fetch meals from user input.
 
+    console.log(meals)
     // If there is search results display all results
     if (meals) {
         meals.forEach((meal) => {

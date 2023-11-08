@@ -1,39 +1,25 @@
 {
   "meals": [
     {
-      "id": 0,
-      "name": "Pastapasta",
-      "img": "https://www.themealdb.com/images/media/meals/kw92t41604181871.jpg",
-      "instructins": "lalalalalalala",
-      "ingredients": "jajajajaja"
+      "name": "Tacossss",
+      "img": "/",
+      "instructions": "yeeeeeeeeeee eeeeeeeeeeee eeeeeeeeeeee ",
+      "ingredients": "yeeeeeeeeeee eeeeeeeeeeee eeeeeeeeeeee \nyeeeeeeeeeee eeeeeeeeeeee eeeeeeeeeeee \nyeeeeeeeeeee eeeeeeeeeeee eeeeeeeeeeee \nyeeeeeeeeeee eeeeeeeeeeee eeeeeeeeeeee ",
+      "id": 15
     },
     {
-      "id": 1,
-      "name": "Pastapasta",
-      "img": "https://www.themealdb.com/images/media/meals/kw92t41604181871.jpg",
-      "instructins": "lalalalalalala",
-      "ingredients": "jajajajaja"
+      "name": "Köttbullar mama scan",
+      "img": "https://images.unsplash.com/photo-1515516969-d4008cc6241a?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "instructions": "  1. Inlagd gurka: Skiva gurkan tunt och lägg den i en skål. Koka upp vatten, ättika och socker i en kastrull. Låt svalna och slå sedan lagen över gurkan. Låt dra i ca 1 tim.\n\n2. Potatismos: Skala potatisen och koka den mjuk i saltat vatten.\n\n3. Köttbullar: Skala och finhacka lök och stek den mjuk i smör i en panna.\n\n4. Vispa samman ströbröd, mjölk, ägg, kalvfond och senap i en skål och låt svälla i 5 min. 5. Tillsätt färs, stekt lök, salt, peppar och kryddpeppar i skålen och blanda om till en jämn smet.\n\n6. Rulla medelstora köttbullar och lägg dem på en ren skärbräda. Stek köttbullarna runt om i olja och smör i ca 6-7 min.\n\n7. Potatismos: Sila av potatisvattnet och tillsätt mjölk och smör till den kokta potatisen. Vispa ihop till ett mos och smaka av med salt och peppar.\n\nServera köttbullarna med potatismos, inlagd gurka och rårörda lingon.",
+      "ingredients": "1 st Gul lök\n1 st Ägg\n500 g Köttfärs - Bland\n1 dl Ströbröd\n1.5 dl Mjölk\n2 msk Mat & Bak Smör\n2 msk Kalvfond Buljong\n1 msk Olivolja\n1 msk Mat & Bak Smör\n1 tsk Senap Dijon\n0.5 tsk Salt Fint\n2 krm Svartpeppar Malen\n2 krm Kryddpeppar Malen",
+      "id": 16
     },
     {
-      "id": 2,
-      "name": "Pastapasta",
-      "img": "https://www.themealdb.com/images/media/meals/kw92t41604181871.jpg",
-      "instructins": "lalalalalalala",
-      "ingredients": "jajajajaja"
-    },
-    {
-      "id": 3,
-      "name": "Pastapasta",
-      "img": "https://www.themealdb.com/images/media/meals/kw92t41604181871.jpg",
-      "instructins": "lalalalalalala",
-      "ingredients": "jajajajaja"
-    },
-    {
-      "id": 4,
-      "name": "Pastapasta",
-      "img": "https://www.themealdb.com/images/media/meals/kw92t41604181871.jpg",
-      "instructins": "lalalalalalala",
-      "ingredients": "jajajajaja"
+      "name": "test5",
+      "img": "test",
+      "instructions": "test",
+      "ingredients": "test",
+      "id": 17
     }
   ]
 }

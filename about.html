@@ -13,6 +13,12 @@
     </head>
     <body>
         <!-- 1. Navbar Desktop -->
+        <!-- 2. Hamburger Navbar -->
+        <!-- 3. Text container and chart -->
+        <!-- 4. Footer -->
+        <!-- 5. JS - Same as chart.js. Didnt work with the js file, so i put it in the <script>-tags-->
+
+        <!-- 1. Navbar Desktop -->
         <nav class="desktop-nav">
             <div class="logo">
                 <a href="index.html">
@@ -50,7 +56,7 @@
         </nav>
         <!-- End of Hamburger navbar -->
 
-        <!--  -->
+        <!-- 3. Text container and chart -->
         <section class="about-container">
             <h2>About us</h2>
             <h3>William's food recipes</h3>
@@ -71,7 +77,9 @@
                 <canvas id="my-chart"></canvas>
             </div>
         </section>
+        <!-- 3. End of Text container and chart -->
 
+        <!-- 4. Footer -->
         <footer>
             <div class="footer-container">
                 <div class="logo">
@@ -81,20 +89,20 @@
                 </div>
 
                 <ul class="footer-links">
-                    <li><a href="favorites.html">Favorites</a></li>
                     <li><a href="addRecipe.html">Add Recipe</a></li>
                     <li><a href="about.html">About Us</a></li>
                 </ul>
             </div>
             <p class="copyright">Made By @ William Mattsson | IT-Högskolan</p>
         </footer>
-        <!-- End of footer -->
+        <!-- 4. End of footer -->
 
-        <!--         <script src="chart.js"></script>
- -->
+        <!-- <script src="chart.js"></script> -->
+
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="app.js"></script>
         <script>
+            /* 5. JS - Same as chart.js */
             // * To display how many meals we have for every category
 
             let categoryNames = []
@@ -182,7 +190,7 @@
                                 ticks: {
                                     font: {
                                         weight: 'bold',
-                                        size: 14
+                                        size: 12
                                     }
                                 }
                             },
@@ -190,7 +198,7 @@
                                 ticks: {
                                     font: {
                                         weight: 'bold',
-                                        size: 14
+                                        size: 10
                                     }
                                 }
                             }

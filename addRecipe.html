@@ -13,6 +13,12 @@
     </head>
     <body>
         <!-- 1. Navbar Desktop -->
+        <!-- 2. Hamburger Navbar -->
+        <!-- 3. Add recipe form -->
+        <!-- 4. Popup for "my recipes", edit recipe popup goes here too -->
+        <!-- 5. Footer -->
+
+        <!-- 1. Navbar Desktop -->
         <nav class="desktop-nav">
             <div class="logo">
                 <a href="index.html">
@@ -50,25 +56,30 @@
         </nav>
         <!-- End of Hamburger navbar -->
 
+        <!-- 3. Add recipe form -->
         <section class="recipes-container">
             <div class="my-recipes">
-                <i class="fa-solid fa-arrow-right my-recipes-arrow"></i>
+                <i class="fa-solid fa-arrow-left my-recipes-arrow"></i>
                 <h4>My recipes</h4>
                 <ul class="my-recipes-ul">
                     <li>
                         <span class="my-recipe-text">Chicken Shawarma</span>
-                        <i class="fa-solid fa-xmark my-recipe-x"></i>
+                        <div class="">
+                            <i class="fa-solid fa-pen my-recipe-edit"></i>
+                            <i class="fa-solid fa-xmark my-recipe-x"></i>
+                        </div>
                     </li>
                 </ul>
             </div>
             <div class="form-container">
                 <h2 class="form-title">Add your own recipe</h2>
-                <form action="#" id="recipe-form">
+                <form id="recipe-form">
                     <div class="recipe-details">
                         <div class="input-box">
                             <span class="details">Meal name</span>
                             <input
                                 type="text"
+                                name="mealName"
                                 placeholder="Enter Your Meals Name..."
                                 required
                             />
@@ -77,6 +88,7 @@
                             <span class="details">Image Url</span>
                             <input
                                 type="text"
+                                name="mealImgUrl"
                                 placeholder="Enter Your image url..."
                                 required
                             />
@@ -84,7 +96,8 @@
                         <div class="input-box">
                             <span class="details">Instructions</span>
                             <textarea
-                                name="instructions"
+                                required
+                                name="mealInstructions"
                                 id="instructions"
                                 cols="40"
                                 rows="8"
@@ -94,7 +107,8 @@
                         <div class="input-box">
                             <span class="details">Ingredients</span>
                             <textarea
-                                name="ingredients"
+                                required
+                                name="mealIngredients"
                                 id="ingredients"
                                 cols="40"
                                 rows="8"
@@ -105,13 +119,48 @@ Beef - 500g,
                         </div>
                     </div>
                     <div class="recipe-btn-container">
-                        <button class="add-recipe-btn">Add recipe</button>
+                        <button type="submit" class="add-recipe-btn">
+                            Add recipe
+                        </button>
                     </div>
                 </form>
             </div>
         </section>
+        <!-- 3. Add recipe form -->
 
-        <!-- Footer -->
+        <!-- 4. Popup for "my recipes", edit recipe popup goes here too -->
+        <section class="pop-up-container">
+            <div class="pop-up">
+                <h2 class="popup-h2">lala</h2>
+                <i class="fa-solid fa-x"></i>
+                <div class="pop-up-content">
+                    <!-- <div class="left">
+                        <div class="meal-card">
+                            <div class="meal-card-img-container">
+                                <img src="${meal.img}" alt="recipe foto" />
+                            </div>
+                            <div class="meal-name">
+                                <p>${meal.name}</p>
+                                <i class="fa-regular fa-heart"></i>
+                            </div>
+                        </div>
+                        <div class="ingredients-div">
+                            <h2>Ingredients / Measures</h2>
+                            <p>${meal.ingredients}</p>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div>
+                            <h2>Intructions</h2>
+                            <p class="meal-info">${meal.instructions}</p>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+        <!-- 4. End of Popup for "my recipes" -->
+
+        <!-- 5. Footer -->
         <footer>
             <div class="footer-container">
                 <div class="logo">
@@ -121,14 +170,13 @@ Beef - 500g,
                 </div>
 
                 <ul class="footer-links">
-                    <li><a href="favorites.html">Favorites</a></li>
                     <li><a href="addRecipe.html">Add Recipe</a></li>
                     <li><a href="about.html">About Us</a></li>
                 </ul>
             </div>
             <p class="copyright">Made By @ William Mattsson | IT-Högskolan</p>
         </footer>
-        <!-- End of footer -->
+        <!-- 5. End of footer -->
 
         <script src="app.js"></script>
         <script src="addRecipe.js"></script>

@@ -582,6 +582,7 @@ footer p {
 }
 
 /* * 9. About Us (chart) */
+/* center */
 .about-container {
     text-align: center;
     margin-top: 1rem;
@@ -598,6 +599,7 @@ footer p {
     font-weight: 600;
 }
 
+/* Style the text */
 .about-text {
     background-color: var(--nav-color);
     border-radius: 8px;
@@ -609,6 +611,7 @@ footer p {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
+/* Center and adds space */
 .chart {
     margin: auto;
     margin-top: 0.6rem;
@@ -617,6 +620,7 @@ footer p {
     margin-bottom: 6rem;
 }
 
+/* Styles the chart */
 #my-chart {
     margin: auto;
     margin-top: 1rem;
@@ -627,9 +631,8 @@ footer p {
 }
 
 /* * 10. Add Recipe () */
+
 .recipes-container {
-    /*     display: flex;
- */
     margin-top: 2rem;
 }
 
@@ -637,19 +640,24 @@ footer p {
     background-color: var(--nav-color);
     min-height: 3rem;
     height: fit-content;
-    height: 3rem;
-    width: 3rem;
+    width: fit-content;
     padding: 1rem;
-    margin-top: 2rem;
     border-radius: 0 6px 6px 0;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-    text-align: center;
     overflow: hidden;
     position: relative;
 }
 
+/* When arrow is pressed --> add this class */
+.my-recipes-fixer {
+    width: 3rem;
+    height: 3rem;
+}
+
 .my-recipes h4 {
     margin-top: 1.6rem;
+    font-size: 1.4rem;
+    text-align: center;
 }
 
 .my-recipes-arrow {
@@ -664,8 +672,25 @@ footer p {
     margin-top: 0.4rem;
 }
 
+/* Give space between name and X */
 .my-recipes-ul li {
     font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.6rem;
+    border-radius: 1rem;
+}
+
+/* adds color */
+.my-recipes-ul li:hover {
+    background-color: white;
+}
+
+.my-recipes-ul li span {
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .my-recipes-ul li span:hover {
@@ -673,16 +698,29 @@ footer p {
     cursor: pointer;
 }
 
-.my-recipe-x {
-    font-size: 1.2rem;
-    align-items: center;
-    cursor: pointer;
-    margin-left: 0.6rem;
+.my-recipes > ul > li > div {
+    display: flex;
+    flex-wrap: nowrap;
 }
-.my-recipe-x:hover {
+
+.my-recipe-edit {
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-left: 1rem;
+    margin-top: 3px;
+}
+
+.my-recipe-x {
+    cursor: pointer;
+    margin-left: 0.2rem;
+}
+
+.my-recipe-x:hover,
+.my-recipe-edit:hover {
     scale: 1.2;
 }
 
+/* Center it and style */
 .form-container {
     display: flex;
     justify-content: center;
@@ -699,7 +737,7 @@ footer p {
 
 .form-title {
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 0.6rem;
 }
 
 .recipe-details {
@@ -708,11 +746,14 @@ footer p {
     justify-content: space-between;
 }
 
+/* Take up half the space but 10 px between */
 .input-box {
     width: calc(100% / 2 - 10px);
     min-width: 300px;
+    margin: auto;
 }
 
+/* Style the inputs */
 .input-box input,
 .input-box textarea {
     min-height: 3rem;
@@ -723,7 +764,7 @@ footer p {
     border-radius: 8px;
     padding-left: 0.4rem;
     font-size: 1rem;
-    transition: all 300ms ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
 .input-box textarea {
@@ -733,14 +774,12 @@ footer p {
 
 .input-box input:focus,
 .input-box textarea:focus {
-    border: 1px solid black;
-    border-bottom-width: 2px;
+    border: 2px solid black;
 }
 
 .details {
     font-weight: 500;
     display: block;
-    margin-bottom: 0.2rem;
 }
 
 .recipe-btn-container {
@@ -781,29 +820,35 @@ footer p {
         left: 7rem;
     }
 
+    /* take up whole with */
     .fav-meals-container {
         width: 100%;
         border-radius: 0;
     }
 
+    /* --||-- */
     .user-input {
         width: 100%;
         border-radius: 0;
     }
 
+    /* Add margin */
     .suggestions {
         gap: 1rem;
     }
 
+    /* Add space */
     .pop-up {
         padding: 1rem;
     }
 
+    /* add space */
     .popup-h2 {
         padding-right: 2.2rem;
         margin-top: 0.4rem;
     }
 
+    /* make it column */
     .pop-up-content {
         flex-direction: column;
         align-items: center;
@@ -830,17 +875,48 @@ footer p {
     ::-webkit-scrollbar {
         display: none;
     }
+
     .recipe-details {
         justify-content: center;
+    }
+
+    .about-text {
+        width: 100%;
     }
 }
 
 @media only screen and (max-width: 600px) {
+    /* Take up whole width */
     .form-container {
         width: 100%;
     }
 
+    /* Make it take up whole width */
+    .my-recipes {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Remove the arrow */
+    .my-recipes > i {
+        display: none;
+    }
+
+    .my-recipe-x {
+        margin-left: 0.6rem;
+        font-size: 1.6rem;
+    }
+    .my-recipe-edit {
+        font-size: 1.2rem;
+    }
+
+    /* Bigger btn */
     .add-recipe-btn {
         width: 70%;
+    }
+
+    /*  */
+    #my-chart {
+        padding: 0.4rem;
     }
 }

@@ -227,8 +227,8 @@ Beef - 500g,
 
     // Takes the new recipe and PUT request it to db
     const editRecipeForm = document.querySelector('#edit-form')
-    editRecipeForm.addEventListener('submit', async (e) => {
-        e.preventDefault()
+    editRecipeForm.addEventListener('submit', async (event) => {
+        event.preventDefault()
         const newRecipe = {
             name: editRecipeForm.mealName.value,
             img: editRecipeForm.mealImgUrl.value,

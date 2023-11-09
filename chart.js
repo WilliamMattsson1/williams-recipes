@@ -24,7 +24,7 @@ async function fetchCategories() {
 
         createChart() // Create the chart after fetching data
     } catch (error) {
-        console.log('Something went wrong:', error)
+        console.error('Something went wrong:', error)
     }
 }
 
@@ -39,7 +39,7 @@ async function getQuantity(categoryName) {
         let quantity = category.length
         mealsQuantity.push(quantity)
     } catch (error) {
-        console.log('Something went wrong:', error)
+        console.error('Something went wrong:', error)
     }
 }
 

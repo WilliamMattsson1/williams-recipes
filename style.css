@@ -223,6 +223,19 @@ nav a:hover {
     cursor: pointer;
 }
 
+.total-fav-meals {
+    position: absolute;
+    top: 4px;
+    right: 32px;
+    background-color: black;
+    color: white;
+    padding: 0.3rem;
+    width: 2rem;
+    border-radius: 50%;
+    font-weight: 500;
+    font-size: 15px;
+}
+
 /* Position favorite meal */
 .fav-meal {
     display: flex;

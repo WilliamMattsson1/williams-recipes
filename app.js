@@ -1,5 +1,6 @@
 const modeBtn = document.querySelector('.mode-btn > i')
 const favContainer = document.querySelector('.fav-meals-container')
+const favMealsCounter = document.querySelector('.total-fav-meals')
 const favArrow = document.querySelector('.fav-toggle')
 const favMealsContainer = document.querySelector('.fav-meals')
 
@@ -111,9 +112,11 @@ function displayMeal(meal) {
         if (favBtn.classList.contains('fa-regular')) {
             favBtn.setAttribute('class', 'fa-solid fa-heart')
             addMealStorage(meal.idMeal) // Save id to Local storage
+            updateTotalFavMeals()
         } else {
             favBtn.setAttribute('class', 'fa-regular fa-heart')
             removeMealStorage(meal.idMeal)
+            updateTotalFavMeals()
         }
         updateFavMeals()
     })
@@ -148,6 +151,7 @@ async function fetchMealsByCategory(category) {
 
         console.log(meals)
 
+        // get the id and fetch to get all data needed
         if (meals) {
             meals.forEach(async (meal) => {
                 const id = meal.idMeal
@@ -157,15 +161,6 @@ async function fetchMealsByCategory(category) {
             // Change the text from random meal to this
             mealsH3.innerText = `Search results for: ${category}`
         }
-
-        /* if (meals) {
-            meals.forEach((meal) => {
-                displayMeal(meal)
-            })
-
-            // Change the text from random meal to this
-            mealsH3.innerText = `Search results for: ${category}`
-        } */
 
         // If there isnt any search results.
         else {
@@ -219,7 +214,7 @@ async function fetchMealById(id) {
         const meal = data.meals[0]
         return meal
     } catch (error) {
-        console.log('Something went wrong: ', error)
+        console.error('Something went wrong: ', error)
     }
 }
 
@@ -252,6 +247,7 @@ function addMealToFav(meal) {
 
         // Update the fav list
         updateFavMeals()
+        updateTotalFavMeals()
     })
 
     // Shows popup when the img is clicked.
@@ -346,6 +342,16 @@ closePopupBtn.addEventListener('click', () => {
     footer.style.display = 'block'
 })
 
+// Count favorite meals
+let totalFavMeals = localStorage.getItem('totalFavMeals')
+
+// Update how many favorite meals
+async function updateTotalFavMeals() {
+    totalFavMeals = await getMealStorage().length
+    favMealsCounter.innerText = totalFavMeals
+    localStorage.setItem('totalFavMeals', totalFavMeals)
+}
+
 // Toggle the fav meals
 favArrow.addEventListener('click', () => {
     if (favArrow.classList.contains('fa-arrow-down')) {
@@ -358,3 +364,4 @@ favArrow.addEventListener('click', () => {
 })
 
 updateFavMeals()
+updateTotalFavMeals()

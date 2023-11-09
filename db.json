@@ -1,25 +1,53 @@
 {
   "meals": [
     {
-      "name": "Tacossss",
-      "img": "/",
-      "instructions": "yeeeeeeeeeee eeeeeeeeeeee eeeeeeeeeeee ",
-      "ingredients": "yeeeeeeeeeee eeeeeeeeeeee eeeeeeeeeeee \nyeeeeeeeeeee eeeeeeeeeeee eeeeeeeeeeee \nyeeeeeeeeeee eeeeeeeeeeee eeeeeeeeeeee \nyeeeeeeeeeee eeeeeeeeeeee eeeeeeeeeeee ",
-      "id": 15
-    },
-    {
-      "name": "Köttbullar mama scan",
+      "name": "Köttbullar",
       "img": "https://images.unsplash.com/photo-1515516969-d4008cc6241a?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "instructions": "  1. Inlagd gurka: Skiva gurkan tunt och lägg den i en skål. Koka upp vatten, ättika och socker i en kastrull. Låt svalna och slå sedan lagen över gurkan. Låt dra i ca 1 tim.\n\n2. Potatismos: Skala potatisen och koka den mjuk i saltat vatten.\n\n3. Köttbullar: Skala och finhacka lök och stek den mjuk i smör i en panna.\n\n4. Vispa samman ströbröd, mjölk, ägg, kalvfond och senap i en skål och låt svälla i 5 min. 5. Tillsätt färs, stekt lök, salt, peppar och kryddpeppar i skålen och blanda om till en jämn smet.\n\n6. Rulla medelstora köttbullar och lägg dem på en ren skärbräda. Stek köttbullarna runt om i olja och smör i ca 6-7 min.\n\n7. Potatismos: Sila av potatisvattnet och tillsätt mjölk och smör till den kokta potatisen. Vispa ihop till ett mos och smaka av med salt och peppar.\n\nServera köttbullarna med potatismos, inlagd gurka och rårörda lingon.",
       "ingredients": "1 st Gul lök\n1 st Ägg\n500 g Köttfärs - Bland\n1 dl Ströbröd\n1.5 dl Mjölk\n2 msk Mat & Bak Smör\n2 msk Kalvfond Buljong\n1 msk Olivolja\n1 msk Mat & Bak Smör\n1 tsk Senap Dijon\n0.5 tsk Salt Fint\n2 krm Svartpeppar Malen\n2 krm Kryddpeppar Malen",
       "id": 16
     },
     {
-      "name": "test5",
-      "img": "test",
-      "instructions": "test",
-      "ingredients": "test",
-      "id": 17
+      "name": "AlPastor",
+      "img": "https://images.unsplash.com/photo-1617918160302-f2dfbcb3f88c?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "instructions": "laaa laaa 123412345123 sdfalkdfalkj \njajajajaj",
+      "ingredients": "tomat- 2\nurka - 3 dl\ntaco krydda",
+      "id": 18
+    },
+    {
+      "name": "Jerk Chicken",
+      "img": "https://images.unsplash.com/photo-1610057099431-d73a1c9d2f2f?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "instructions": "Recept från Barbados där jag besökte min bror som bodde där. Till kycklingen och den heta såsen är det supergott med ugnsrostad potatis,\nugnsrostade grönsaker eller grillad majs. Men du kan också äta kycklingen som den är med bara såsen /Tareq",
+      "ingredients": "1 gul lök (stor)\n2 klyftor vitlök\n1 chilifrukt (t ex habanero, eller torkad chili)\n1 limefrukt, saften från\n1 tsk kryddpepparkorn\n1,5 tsk malen muskot\n1 tsk five spice, krydda\n0,75 dl japansk soja\n1 tsk torkad timjan\n1 msk solrosolja",
+      "id": 19
+    },
+    {
+      "name": "Birria",
+      "img": "https://images.unsplash.com/photo-1666307635004-3900f0bad9fa?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "instructions": "\nSkala och hacka gul- och vitlöken. Fräs lökhacket mjukt i oljan i en gryta, sänk värmen och rör i kryddorna. Låt dem fräsa någon minut. Dra av grytan från värmen och tillsätt vinäger och vatten.\n\nSkär bort skaftet på den blötlagda chilin och dela och skrapa ur kärnorna. Mixa chilin (utan skaft och kärnor) med lökblandningen till en slät kräm.\n\nGryta: Skär köttet i 5 x 5 cm stora bitar och krydda dem med salt. Lägg köttet i grytan och tillsätt chili- och lökmixen, kanelstång, lagerblad, smulad buljongtärning och vatten. Sjud under lock ca 4 timmar eller tills köttet är riktigt mjukt.",
+      "ingredients": "Kryddmix\n1  torkad chipotlechili (1 tsk motsvarar ca 5 g)\n1  torkad anchochili (1 msk motsvarar ca 15 g)\n1  gul lök\n2  vitlöksklyftor\n1/2 msk olja\n2 krm malen nejlika\n1 tsk torkad oregano\n1/2 tsk rökt paprikapulver\n1 tsk spiskummin\n1/2 dl rödvinsvinäger\n1 dl vatten\nGryta\n1 kg högrev\nsalt\n1  kanelstång\n2  lagerblad\n1  köttbuljongtärning eller motsvarande mängd fond\n1 dl vatten\n16  tortillabröd (små)\n150 g riven ost",
+      "id": 20
+    },
+    {
+      "name": "Buffalo Wings",
+      "img": "https://images.unsplash.com/photo-1608039755401-742074f0548d?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "instructions": "\nSätt ugnen på 225˚C.\n\nGrillsås: Skala och riv vitlöksklyftorna. Kärna ur och finhacka chilin. Fräs vitlök, chili, koriander, paprikapulver och tomatpuré i oljan i en liten kastrull.\n\nRör ihop vatten, vinäger, honung och worcestershiresås och blanda ner i fräset. Koka sakta ihop till en tjock sås, ca 5 minuter. Smaka av med tabasco, salt och peppar.\n\nKyckling: Blanda kycklingvingarna med saltet. Massera sedan in grillsåsen i kycklingvingarna. Sprid ut dem på en plåt. Sätt in plåten mitt i ugnen tills vingarnas innertemperatur är 82°C, ca 35 minuter. Vänd kycklingvingarna då och då.\n\nTill servering: Servera kycklingvingarna med stjälkselleristavar, och gärna blue cheesedipp, se tips om du vill göra egen.",
+      "ingredients": "Grillsås\n3  vitlöksklyftor\n1  röd peppar\n1 1/2 tsk mald koriander\n1 1/2 tsk paprikapulver (gärna rökt)\n3 msk tomatpuré\n3 msk olja\n5 msk vatten\n3 msk vitvinsvinäger\n3 msk flytande honung\n1 1/2 msk worcestershiresås\n1 tsk tabasco\n4 krm salt\n2 krm svartpeppar",
+      "id": 21
+    },
+    {
+      "name": "laal",
+      "img": "/",
+      "instructions": "lala",
+      "ingredients": "lalaa",
+      "id": 22
+    },
+    {
+      "name": "test",
+      "img": "/",
+      "instructions": "l",
+      "ingredients": "lyyyy",
+      "id": 23
     }
   ]
 }

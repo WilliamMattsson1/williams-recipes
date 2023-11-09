@@ -130,7 +130,7 @@
 
                     createChart() // Create the chart after fetching data
                 } catch (error) {
-                    console.log('Something went wrong:', error)
+                    console.error('Something went wrong:', error)
                 }
             }
 
@@ -145,7 +145,7 @@
                     let quantity = category.length
                     mealsQuantity.push(quantity)
                 } catch (error) {
-                    console.log('Something went wrong:', error)
+                    console.error('Something went wrong:', error)
                 }
             }
 
@@ -198,7 +198,7 @@
                                 ticks: {
                                     font: {
                                         weight: 'bold',
-                                        size: 10
+                                        size: 9
                                     }
                                 }
                             }

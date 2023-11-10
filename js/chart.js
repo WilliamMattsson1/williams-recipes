@@ -1,6 +1,6 @@
+// ! Make sure this is linked with <script> in the about.html
 // * To display how many meals we have for every category
 
-// ! Make sure this is linked with <script> in the about.html
 let categoryNames = []
 let mealsQuantity = []
 const ctx = document.getElementById('my-chart')
@@ -45,24 +45,56 @@ async function getQuantity(categoryName) {
 
 // Function to create the chart
 function createChart() {
+    const colorPalette = [
+        'rgba(255, 99, 132, 0.4)',
+        'rgba(54, 162, 235, 0.4)',
+        'rgba(255, 206, 86, 0.4)',
+        'rgba(75, 192, 192, 0.4)',
+        'rgba(153, 102, 255, 0.4)',
+        'rgba(255, 159, 64, 0.4)',
+        'rgba(200, 0, 0, 0.4)',
+        'rgba(0, 200, 0, 0.4)',
+        'rgba(0, 0, 200, 0.4)',
+        'rgba(200, 200, 0, 0.4)',
+        'rgba(200, 0, 200, 0.4)',
+        'rgba(0, 200, 200, 0.4)',
+        'rgba(100, 100, 100, 0.4)',
+        'rgba(180, 180, 180, 0.4)'
+    ]
+
     new Chart(ctx, {
         type: 'bar',
         data: {
             labels: categoryNames,
             datasets: [
                 {
-                    label: 'Different Categories',
+                    label: 'Number of meals',
                     data: mealsQuantity,
-                    backgroundColor: ['rgba(255, 99, 132, 0.2)'],
-                    borderColor: ['rgba(255, 99, 132, 1)'],
-                    borderWidth: 1
+                    backgroundColor: colorPalette, // 0.2
+                    borderColor: colorPalette, // 1
+                    borderWidth: 2,
+                    borderRadius: 6
                 }
             ]
         },
         options: {
             scales: {
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    ticks: {
+                        font: {
+                            weight: 'bold',
+                            size: 12
+                        }
+                    }
+                },
+                x: {
+                    ticks: {
+                        font: {
+                            weight: 'bold',
+                            size: 9
+                        }
+                    }
                 }
             }
         }

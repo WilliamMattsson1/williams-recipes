@@ -78,6 +78,7 @@
             <div class="chart">
                 <h4>Here is a chart</h4>
                 <p>For all different categories</p>
+                <div id="loader"></div>
                 <canvas id="my-chart"></canvas>
             </div>
         </section>
@@ -134,6 +135,9 @@
                     console.log(categoryNames)
                     console.log(mealsQuantity)
 
+                    // display none the loader when data is loaded
+                    document.querySelector('#loader').style.display = 'none'
+
                     createChart() // Create the chart after fetching data
                 } catch (error) {
                     console.error('Something went wrong:', error)
@@ -173,6 +177,22 @@
                     'rgba(100, 100, 100, 0.4)',
                     'rgba(180, 180, 180, 0.4)'
                 ]
+                const colorPaletteBorder = [
+                    'rgba(255, 99, 132, 0.7)',
+                    'rgba(54, 162, 235, 0.7)',
+                    'rgba(255, 206, 86, 0.7)',
+                    'rgba(75, 192, 192, 0.7)',
+                    'rgba(153, 102, 255, 0.7)',
+                    'rgba(255, 159, 64, 0.7)',
+                    'rgba(200, 0, 0, 0.7)',
+                    'rgba(0, 200, 0, 0.7)',
+                    'rgba(0, 0, 200, 0.7)',
+                    'rgba(200, 200, 0, 0.7)',
+                    'rgba(200, 0, 200, 0.7)',
+                    'rgba(0, 200, 200, 0.7)',
+                    'rgba(100, 100, 100, 0.7)',
+                    'rgba(180, 180, 180, 0.7)'
+                ]
 
                 new Chart(ctx, {
                     type: 'bar',
@@ -182,8 +202,8 @@
                             {
                                 label: 'Number of meals',
                                 data: mealsQuantity,
-                                backgroundColor: colorPalette, // 0.2
-                                borderColor: colorPalette, // 1
+                                backgroundColor: colorPalette, // 0.4
+                                borderColor: colorPaletteBorder, // 1
                                 borderWidth: 2,
                                 borderRadius: 6
                             }

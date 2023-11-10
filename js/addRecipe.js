@@ -172,7 +172,7 @@ function editRecipePopup(meal) {
             <div class="input-box">
                 <span class="details">Meal name</span>
                 <input
-                    value = ${meal.name}
+                    value = "${meal.name}"
                     type="text"
                     name="mealName"
                     placeholder="Enter Your Meals Name..."
@@ -182,7 +182,7 @@ function editRecipePopup(meal) {
             <div class="input-box">
                 <span class="details">Image Url</span>
                 <input
-                    value = ${meal.img}
+                    value = "${meal.img}"
                     type="text"
                     name="mealImgUrl"
                     placeholder="Enter Your image url..."

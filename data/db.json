@@ -29,25 +29,11 @@
       "id": 20
     },
     {
-      "name": "Buffalo Wings",
+      "name": "Buffalo wings",
       "img": "https://images.unsplash.com/photo-1608039755401-742074f0548d?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "instructions": "\nSätt ugnen på 225˚C.\n\nGrillsås: Skala och riv vitlöksklyftorna. Kärna ur och finhacka chilin. Fräs vitlök, chili, koriander, paprikapulver och tomatpuré i oljan i en liten kastrull.\n\nRör ihop vatten, vinäger, honung och worcestershiresås och blanda ner i fräset. Koka sakta ihop till en tjock sås, ca 5 minuter. Smaka av med tabasco, salt och peppar.\n\nKyckling: Blanda kycklingvingarna med saltet. Massera sedan in grillsåsen i kycklingvingarna. Sprid ut dem på en plåt. Sätt in plåten mitt i ugnen tills vingarnas innertemperatur är 82°C, ca 35 minuter. Vänd kycklingvingarna då och då.\n\nTill servering: Servera kycklingvingarna med stjälkselleristavar, och gärna blue cheesedipp, se tips om du vill göra egen.",
+      "instructions": "Sätt ugnen på 235˚C.\n\nGrillsås: Skala och riv vitlöksklyftorna. Kärna ur och finhacka chilin. Fräs vitlök, chili, koriander, paprikapulver och tomatpuré i oljan i en liten kastrull.\n\nRör ihop vatten, vinäger, honung och worcestershiresås och blanda ner i fräset. Koka sakta ihop till en tjock sås, ca 5 minuter. Smaka av med tabasco, salt och peppar.\n\nKyckling: Blanda kycklingvingarna med saltet. Massera sedan in grillsåsen i kycklingvingarna. Sprid ut dem på en plåt. Sätt in plåten mitt i ugnen tills vingarnas innertemperatur är 82°C, ca 35 minuter. Vänd kycklingvingarna då och då.\n\nTill servering: Servera kycklingvingarna med stjälkselleristavar, och gärna blue cheesedipp, se tips om du vill göra egen.",
       "ingredients": "Grillsås\n3  vitlöksklyftor\n1  röd peppar\n1 1/2 tsk mald koriander\n1 1/2 tsk paprikapulver (gärna rökt)\n3 msk tomatpuré\n3 msk olja\n5 msk vatten\n3 msk vitvinsvinäger\n3 msk flytande honung\n1 1/2 msk worcestershiresås\n1 tsk tabasco\n4 krm salt\n2 krm svartpeppar",
       "id": 21
-    },
-    {
-      "name": "laal",
-      "img": "/",
-      "instructions": "lala",
-      "ingredients": "lalaa",
-      "id": 22
-    },
-    {
-      "name": "test",
-      "img": "/",
-      "instructions": "l",
-      "ingredients": "lyyyy",
-      "id": 23
     }
   ]
 }

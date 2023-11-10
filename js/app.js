@@ -196,7 +196,7 @@ async function displayRandomMeal() {
 
 async function updateFavMeals() {
     favMealsContainer.innerHTML = ''
-    const mealsIds = getMealStorage() // gets the meals from ls
+    const mealsIds = getMealStorage() // gets the meals from ls in array
     for (let i = 0; i < mealsIds.length; i++) {
         const mealID = mealsIds[i]
         const meal = await fetchMealById(mealID) // get every meals id

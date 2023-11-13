@@ -233,7 +233,7 @@ nav a:hover {
     padding: 0.3rem;
     width: 2rem;
     border-radius: 50%;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 15px;
 }
 
@@ -737,7 +737,7 @@ footer p {
 }
 
 .my-recipes-ul li span {
-    text-wrap: nowrap;
+    text-wrap: nowrap; /* W3C Error but it doesn't matter */
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -850,4 +850,20 @@ footer p {
 
 .add-recipe-btn:hover {
     scale: 1.1;
+}
+
+/* alert text */
+#recipe-form h5 {
+    text-align: center;
+    margin: 0.6rem;
+    font-size: 1.2rem;
+}
+
+/* Alert checkmark */
+.fa-check {
+    color: white;
+    padding: 0.2rem;
+    background-color: #000000;
+    margin-left: 0.6rem;
+    border-radius: 50%;
 }

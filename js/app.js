@@ -27,14 +27,31 @@ function toggleMenu() {
     icon.classList.toggle('open')
 }
 
-// Change the icon when mode switching and toggle class
+// Darkmode switching
+let darkMode = localStorage.getItem('darkMode')
+
+function enableDarkMode() {
+    document.body.classList.add('dark-mode') // change the var colors
+    modeBtn.setAttribute('class', 'fa-solid fa-toggle-on') // change FA icon
+    localStorage.setItem('darkMode', 'enabled') // Save to LS
+}
+
+function disableDarkMode() {
+    document.body.classList.remove('dark-mode')
+    modeBtn.setAttribute('class', 'fa-solid fa-toggle-off')
+    localStorage.setItem('darkMode', 'disabled')
+}
+
+if (darkMode === 'enabled') {
+    enableDarkMode()
+}
+
 modeBtn.addEventListener('click', () => {
-    if (modeBtn.classList.contains('fa-toggle-off')) {
-        modeBtn.setAttribute('class', 'fa-solid fa-toggle-on')
+    if (darkMode !== 'enabled') {
+        enableDarkMode()
     } else {
-        modeBtn.setAttribute('class', 'fa-solid fa-toggle-off')
+        disableDarkMode()
     }
-    document.documentElement.classList.toggle('dark-mode')
 })
 
 // When search icon is pressed.

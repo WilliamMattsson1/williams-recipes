@@ -86,9 +86,7 @@ async function removeMealFromMyRecipes(mealID) {
 }
 
 // Make a object from the form. and post request it to the db
-addRecipeForm.addEventListener('submit', async (e) => {
-    e.preventDefault()
-
+addRecipeForm.addEventListener('submit', async () => {
     const recipe = {
         name: addRecipeForm.mealName.value,
         img: addRecipeForm.mealImgUrl.value,
@@ -102,11 +100,10 @@ addRecipeForm.addEventListener('submit', async (e) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(recipe)
         })
+        window.scrollTo(0, 0) /* !!!!! */
     } catch (error) {
         console.error('Something went wrong: ', error)
     }
-
-    addRecipeForm.reset() // Clears the form
 })
 
 // popup when a recepi from my recipes is pressed
@@ -130,12 +127,12 @@ function myRecipePopup(meal) {
             </div>
             <div class="ingredients-div">
                 <h2>Ingredients / Measures</h2>
-                <p>
+                <p class="meal-info">
                     ${meal.ingredients}
                 </p>
             </div>
         </div>
-        <div class="right">
+        <div class="instructions">
             <div>
                 <h2>Intructions</h2>
                 <p class="meal-info">${meal.instructions}</p>

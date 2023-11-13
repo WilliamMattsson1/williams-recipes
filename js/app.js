@@ -47,6 +47,7 @@ if (darkMode === 'enabled') {
 }
 
 modeBtn.addEventListener('click', () => {
+    darkMode = localStorage.getItem('darkMode') // Solved bug 3
     if (darkMode !== 'enabled') {
         enableDarkMode()
     } else {
@@ -279,7 +280,6 @@ function addMealToFav(meal) {
 // Get the local storage if there is something there.
 function getMealStorage() {
     const mealIds = JSON.parse(localStorage.getItem('mealIds'))
-
     return mealIds === null ? [] : mealIds
 }
 
@@ -340,7 +340,7 @@ function showMealPopup(meal) {
             </ul>
         </div>
     </div>
-    <div class="right">
+    <div class="instructions">
         <div>
             <h2>Intructions</h2>
             <p class="meal-info">${meal.strInstructions}</p>

@@ -87,15 +87,8 @@ async function removeMealFromMyRecipes(mealID) {
     }
 }
 
-/* setTimeout(function () {
-    formH5.innerHTML = 'Your recipe added to my recipes'
-}, 3000)
-
-formH5.innerHTML = '' */
-
 // Make a object from the form. and post request it to the db
-addRecipeForm.addEventListener('submit', async (e) => {
-    e.preventDefault() // ???
+addRecipeForm.addEventListener('submit', async () => {
     const recipe = {
         name: addRecipeForm.mealName.value,
         img: addRecipeForm.mealImgUrl.value,
@@ -103,20 +96,18 @@ addRecipeForm.addEventListener('submit', async (e) => {
         ingredients: addRecipeForm.mealIngredients.value
     }
 
-    // Adds alert message for 3 sec
-    formH5.innerHTML = `${addRecipeForm.mealName.value}: succesfully added to my recipes<i class="fa-solid fa-check"></i>`
-    setTimeout(function () {
-        formH5.innerHTML = ''
-    }, 3000)
-
     try {
         await fetch('http://localhost:3000/meals', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(recipe)
         })
-
-        window.scrollTo(0, 0) /* !!!!! */
+        // Adds alert message for 3 sec
+        formH5.innerHTML = `${addRecipeForm.mealName.value}: succesfully added to my recipes<i class="fa-solid fa-check"></i>`
+        setTimeout(function () {
+            formH5.innerHTML = ''
+        }, 3000)
+        window.scrollTo(0, 0)
     } catch (error) {
         console.error('Something went wrong: ', error)
     }

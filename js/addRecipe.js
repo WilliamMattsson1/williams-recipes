@@ -94,7 +94,8 @@ async function removeMealFromMyRecipes(mealID) {
 formH5.innerHTML = '' */
 
 // Make a object from the form. and post request it to the db
-addRecipeForm.addEventListener('submit', async () => {
+addRecipeForm.addEventListener('submit', async (e) => {
+    e.preventDefault() // ???
     const recipe = {
         name: addRecipeForm.mealName.value,
         img: addRecipeForm.mealImgUrl.value,
@@ -130,7 +131,7 @@ function myRecipePopup(meal) {
 
     popupH2.innerText = meal.name
     newPopup.innerHTML = `
-            <div class="left">
+            <div class="left-content">
             <div class="meal-card">
                 <div class="meal-card-img-container">
                     <img src="${meal.img}" alt="recipe foto">

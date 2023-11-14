@@ -222,6 +222,16 @@ async function updateFavMeals() {
     }
 }
 
+// Count favorite meals
+let totalFavMeals = localStorage.getItem('totalFavMeals')
+
+// Update how many favorite meals
+async function updateTotalFavMeals() {
+    totalFavMeals = await getMealStorage().length
+    favMealsCounter.innerText = totalFavMeals
+    localStorage.setItem('totalFavMeals', totalFavMeals)
+}
+
 // fetch the meal by ID and returns it
 async function fetchMealById(id) {
     try {
@@ -323,7 +333,7 @@ function showMealPopup(meal) {
     popupH2.innerText = `${meal.strMeal}`
 
     newPopup.innerHTML = `
-    <div class="left">
+    <div class="left-content">
         <div class="meal-card">
             <div class="meal-card-img-container">
                 <img src="${meal.strMealThumb}" alt="recipe foto">
@@ -358,16 +368,6 @@ closePopupBtn.addEventListener('click', () => {
     popupContainer.style.display = 'none'
     footer.style.display = 'block'
 })
-
-// Count favorite meals
-let totalFavMeals = localStorage.getItem('totalFavMeals')
-
-// Update how many favorite meals
-async function updateTotalFavMeals() {
-    totalFavMeals = await getMealStorage().length
-    favMealsCounter.innerText = totalFavMeals
-    localStorage.setItem('totalFavMeals', totalFavMeals)
-}
 
 // Toggle the fav meals
 favArrow.addEventListener('click', () => {

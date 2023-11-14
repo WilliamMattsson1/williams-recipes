@@ -565,12 +565,12 @@ footer p {
 }
 
 /* Make the fav button invisible */
-.pop-up .left i {
+.pop-up .left-content i {
     display: none;
 }
 
 /* Fix the problem with text over img */
-.left > div > div.meal-card-img-container {
+.left-content > div > div.meal-card-img-container {
     width: 300px;
 }
 
@@ -579,7 +579,7 @@ footer p {
 }
 
 /* Moves the bulletpoints */
-.left ul li {
+.left-content ul li {
     list-style-position: inside;
 }
 
@@ -597,7 +597,7 @@ footer p {
 .about-container {
     text-align: center;
     margin-top: 1rem;
-    min-height: 80vh; /* To push down the footer */
+    min-height: 100vh; /* To push down the footer */
     color: var(--txt2-color);
 }
 
@@ -629,6 +629,7 @@ footer p {
     margin: auto;
     margin-top: 0.6rem;
     width: 100%;
+    width: fit-content; /* Makes it responsive */
     height: 50vh;
     margin-bottom: 6rem;
     position: relative; /* for loader */
@@ -673,6 +674,7 @@ footer p {
     margin: auto;
     margin-top: 1rem;
     min-height: 100%;
+    width: 100%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
     padding: 1rem;
     border-radius: 6px;

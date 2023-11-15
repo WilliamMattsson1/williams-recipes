@@ -221,12 +221,9 @@ async function updateFavMeals() {
     }
 }
 
-// Count favorite meals
-let totalFavMeals = localStorage.getItem('totalFavMeals')
-
 // Update how many favorite meals
 async function updateTotalFavMeals() {
-    totalFavMeals = await getMealStorage().length
+    let totalFavMeals = await getMealStorage().length
     favMealsCounter.innerText = totalFavMeals
     localStorage.setItem('totalFavMeals', totalFavMeals)
 }

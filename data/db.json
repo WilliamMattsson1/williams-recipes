@@ -1,13 +1,6 @@
 {
   "meals": [
     {
-      "name": "Al Pastor ",
-      "img": "https://images.unsplash.com/photo-1617918160302-f2dfbcb3f88c?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "instructions": "\"aaa laaa 123412345123 sdfalkdfalkj \njajajajaj",
-      "ingredients": "\"tomat- 2\nurka - 3 dl\ntaco krydda\"",
-      "id": 18
-    },
-    {
       "name": "Jerk Chicken",
       "img": "https://images.unsplash.com/photo-1610057099431-d73a1c9d2f2f?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "instructions": "Recept från Barbados där jag besökte min bror som bodde där. Till kycklingen och den heta såsen är det supergott med ugnsrostad potatis,\nugnsrostade grönsaker eller grillad majs. Men du kan också äta kycklingen som den är med bara såsen /Tareq",
@@ -17,8 +10,8 @@
     {
       "name": "Birria",
       "img": "https://images.unsplash.com/photo-1666307635004-3900f0bad9fa?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "instructions": "\nSkala och hacka gul- och vitlöken. Fräs lökhacket mjukt i oljan i en gryta, sänk värmen och rör i kryddorna. Låt dem fräsa någon minut. Dra av grytan från värmen och tillsätt vinäger och vatten.\n\nSkär bort skaftet på den blötlagda chilin och dela och skrapa ur kärnorna. Mixa chilin (utan skaft och kärnor) med lökblandningen till en slät kräm.\n\nGryta: Skär köttet i 5 x 5 cm stora bitar och krydda dem med salt. Lägg köttet i grytan och tillsätt chili- och lökmixen, kanelstång, lagerblad, smulad buljongtärning och vatten. Sjud under lock ca 4 timmar eller tills köttet är riktigt mjukt.",
-      "ingredients": "Kryddmix\n1  torkad chipotlechili (1 tsk motsvarar ca 5 g)\n1  torkad anchochili (1 msk motsvarar ca 15 g)\n1  gul lök\n2  vitlöksklyftor\n1/2 msk olja\n2 krm malen nejlika\n1 tsk torkad oregano\n1/2 tsk rökt paprikapulver\n1 tsk spiskummin\n1/2 dl rödvinsvinäger\n1 dl vatten\nGryta\n1 kg högrev\nsalt\n1  kanelstång\n2  lagerblad\n1  köttbuljongtärning eller motsvarande mängd fond\n1 dl vatten\n16  tortillabröd (små)\n150 g riven ost",
+      "instructions": "Skala och hacka gul- och vitlöken. Fräs lökhacket mjukt i oljan i en gryta, sänk värmen och rör i kryddorna. Låt dem fräsa någon minut. Dra av grytan från värmen och tillsätt vinäger och vatten.\n\nSkär bort skaftet på den blötlagda chilin och dela och skrapa ur kärnorna. Mixa chilin (utan skaft och kärnor) med lökblandningen till en slät kräm.\n\nGryta: Skär köttet i 5 x 5 cm stora bitar och krydda dem med salt. Lägg köttet i grytan och tillsätt chili- och lökmixen, kanelstång, lagerblad, smulad buljongtärning och vatten. Sjud under lock ca 4 timmar eller tills köttet är riktigt mjukt.",
+      "ingredients": "Kryddmix\n1  torkad chipotlechili (1 tsk motsvarar ca 5 g)\n1  torkad anchochili (1 msk motsvarar ca 15 g)\n2  gul lök\n2  vitlöksklyftor\n1/2 msk olja\n2 krm malen nejlika\n1 tsk torkad oregano\n1/2 tsk rökt paprikapulver\n1 tsk spiskummin\n1/2 dl rödvinsvinäger\n1 dl vatten\nGryta\n1 kg högrev\nsalt\n1  kanelstång\n2  lagerblad\n1  köttbuljongtärning eller motsvarande mängd fond\n1 dl vatten\n16  tortillabröd (små)\n150 g riven ost",
       "id": 20
     },
     {

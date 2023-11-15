@@ -130,13 +130,12 @@ function displayMeal(meal) {
         if (favBtn.classList.contains('fa-regular')) {
             favBtn.setAttribute('class', 'fa-solid fa-heart')
             addMealStorage(meal.idMeal) // Save id to Local storage
-            updateTotalFavMeals()
         } else {
             favBtn.setAttribute('class', 'fa-regular fa-heart')
             removeMealStorage(meal.idMeal)
-            updateTotalFavMeals()
         }
         updateFavMeals()
+        updateTotalFavMeals()
     })
 
     // show popup when meal img is pressed
@@ -218,7 +217,7 @@ async function updateFavMeals() {
     for (let i = 0; i < mealsIds.length; i++) {
         const mealID = mealsIds[i]
         const meal = await fetchMealById(mealID) // get every meals id
-        addMealToFav(meal) // create the element with next function
+        displayFavMeal(meal) // create the element with next function
     }
 }
 
@@ -247,7 +246,7 @@ async function fetchMealById(id) {
 }
 
 //fetch the favorites
-function addMealToFav(meal) {
+function displayFavMeal(meal) {
     const favMeal = document.createElement('div')
     favMeal.innerHTML = `
             <div class="fav-meal">
@@ -262,6 +261,12 @@ function addMealToFav(meal) {
                 <i class="fa-solid fa-x"></i>
             </div>
     `
+
+    // Shows popup when the img is clicked.
+    favMeal.querySelector('.fav-meal-content').addEventListener('click', () => {
+        showMealPopup(meal)
+    })
+
     // The X take it away from fav list and LS
     const x = favMeal.querySelector('.fa-x')
     x.addEventListener('click', () => {
@@ -278,11 +283,6 @@ function addMealToFav(meal) {
         updateTotalFavMeals()
     })
 
-    // Shows popup when the img is clicked.
-    favMeal.querySelector('.fav-meal-content').addEventListener('click', () => {
-        showMealPopup(meal)
-    })
-
     // Places it in the container.
     favMealsContainer.append(favMeal)
 }
@@ -290,22 +290,25 @@ function addMealToFav(meal) {
 // Get the local storage if there is something there.
 function getMealStorage() {
     const mealIds = JSON.parse(localStorage.getItem('mealIds'))
-    return mealIds === null ? [] : mealIds
+    if (mealIds !== null) {
+        return mealIds
+    } else {
+        return []
+    }
 }
 
 // Add meal to Local storage array
 function addMealStorage(mealID) {
     const mealIds = getMealStorage()
-    localStorage.setItem('mealIds', JSON.stringify([...mealIds, mealID]))
+    const updatedMealIds = [...mealIds, mealID]
+    localStorage.setItem('mealIds', JSON.stringify(updatedMealIds))
 }
 
 // Remove meal from local storage array
 function removeMealStorage(mealID) {
     const mealIds = getMealStorage()
-    localStorage.setItem(
-        'mealIds', // Creates new array with id's that dont match mealID
-        JSON.stringify(mealIds.filter((id) => id !== mealID))
-    )
+    updatedMealIds = mealIds.filter((id) => id !== mealID) // removes mealID from array
+    localStorage.setItem('mealIds', JSON.stringify(updatedMealIds))
 }
 
 // Popup function
@@ -315,24 +318,22 @@ function showMealPopup(meal) {
     footer.style.display = 'none'
 
     // Creates the element and adds style
-    const newPopup = document.createElement('div')
-    newPopup.classList.add('pop-up-content')
+    const recipePopup = document.createElement('div')
+    recipePopup.classList.add('pop-up-content')
 
     // If there is ingridients --> Push in to array. ELSE break the loop.
     const ingredients = []
-    for (let i = 1; i <= 20; i++) {
-        if (meal[`strIngredient${i}`]) {
-            ingredients.push(
-                `${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}`
-            )
-        } else {
-            break
-        }
+    let i = 1
+    while (meal[`strIngredient${i}`]) {
+        ingredients.push(
+            `${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}`
+        )
+        i++
     }
 
     popupH2.innerText = `${meal.strMeal}`
 
-    newPopup.innerHTML = `
+    recipePopup.innerHTML = `
     <div class="left-content">
         <div class="meal-card">
             <div class="meal-card-img-container">
@@ -359,7 +360,7 @@ function showMealPopup(meal) {
     </div>
 `
 
-    popup.append(newPopup)
+    popup.append(recipePopup)
     popupContainer.style.display = 'flex' // Make it visible
 }
 

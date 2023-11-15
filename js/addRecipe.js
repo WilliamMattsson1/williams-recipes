@@ -97,7 +97,7 @@ addRecipeForm.addEventListener('submit', async () => {
     }
 
     try {
-        await fetch('http://localhost:3000/meals', {
+        await fetch('http://localhost:3000/meals/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(recipe)
@@ -123,29 +123,28 @@ function myRecipePopup(meal) {
     popupH2.innerText = meal.name
     newPopup.innerHTML = `
             <div class="left-content">
-            <div class="meal-card">
-                <div class="meal-card-img-container">
-                    <img src="${meal.img}" alt="recipe foto">
+                <div class="meal-card">
+                    <div class="meal-card-img-container">
+                        <img src="${meal.img}" alt="recipe foto">
+                    </div>
+                    <div class="meal-name">
+                        <p>${meal.name}</p>
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
                 </div>
-                <div class="meal-name">
-                    <p>${meal.name}</p>
-                    <i class="fa-regular fa-heart"></i>
+                <div class="ingredients-div">
+                    <h2>Ingredients / Measures</h2>
+                    <p class="meal-info">
+                        ${meal.ingredients}
+                    </p>
                 </div>
             </div>
-            <div class="ingredients-div">
-                <h2>Ingredients / Measures</h2>
-                <p class="meal-info">
-                    ${meal.ingredients}
-                </p>
+            <div class="instructions">
+                <div>
+                    <h2>Intructions</h2>
+                    <p class="meal-info">${meal.instructions}</p>
+                </div>
             </div>
-        </div>
-        <div class="instructions">
-            <div>
-                <h2>Intructions</h2>
-                <p class="meal-info">${meal.instructions}</p>
-            </div>
-
-        </div>
     `
 
     popup.append(newPopup) // append and make it visible

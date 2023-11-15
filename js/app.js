@@ -207,7 +207,7 @@ async function displayRandomMeal() {
         console.log(randomMeal)
         displayMeal(randomMeal)
     } catch (error) {
-        console.error('Something went worng: ', error)
+        console.error('Something went wrong: ', error)
     }
 }
 
@@ -245,7 +245,7 @@ async function fetchMealById(id) {
     }
 }
 
-//fetch the favorites
+// display the favorites
 function displayFavMeal(meal) {
     const favMeal = document.createElement('div')
     favMeal.innerHTML = `
@@ -334,30 +334,29 @@ function showMealPopup(meal) {
     popupH2.innerText = `${meal.strMeal}`
 
     recipePopup.innerHTML = `
-    <div class="left-content">
-        <div class="meal-card">
-            <div class="meal-card-img-container">
-                <img src="${meal.strMealThumb}" alt="recipe foto">
+        <div class="left-content">
+            <div class="meal-card">
+                <div class="meal-card-img-container">
+                    <img src="${meal.strMealThumb}" alt="recipe foto">
+                </div>
+                <div class="meal-name">
+                    <p>${meal.strMeal}</p>
+                    <i class="fa-regular fa-heart"></i>
+                </div>
             </div>
-            <div class="meal-name">
-                <p>${meal.strMeal}</p>
-                <i class="fa-regular fa-heart"></i>
+            <div class="ingredients-div">
+                <h2>Ingredients / Measures</h2>
+                <ul>
+                    ${ingredients.map((i) => `<li>${i}</li>`).join('')}
+                </ul>
             </div>
         </div>
-        <div class="ingredients-div">
-            <h2>Ingredients / Measures</h2>
-            <ul>
-                ${ingredients.map((i) => `<li>${i}</li>`).join('')}
-            </ul>
+        <div class="instructions">
+            <div>
+                <h2>Intructions</h2>
+                <p class="meal-info">${meal.strInstructions}</p>
+            </div>
         </div>
-    </div>
-    <div class="instructions">
-        <div>
-            <h2>Intructions</h2>
-            <p class="meal-info">${meal.strInstructions}</p>
-        </div>
-
-    </div>
 `
 
     popup.append(recipePopup)

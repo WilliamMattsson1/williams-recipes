@@ -13,14 +13,21 @@ async function fetchCategories() {
         )
         const data = await response.json()
         const categories = data.meals
-        categoryNames = categories.map((category) => category.strCategory)
+        categoryNames = categories.map(
+            // get the names in the array
+            (category) => category.strCategory
+        )
 
+        // get quantity for every category
         for (let i = 0; i < categoryNames.length; i++) {
             await getQuantity(categoryNames[i])
         }
 
         console.log(categoryNames)
         console.log(mealsQuantity)
+
+        // display none the loader when data is loaded
+        document.querySelector('#loader').style.display = 'none'
 
         createChart() // Create the chart after fetching data
     } catch (error) {
@@ -61,6 +68,22 @@ function createChart() {
         'rgba(100, 100, 100, 0.4)',
         'rgba(180, 180, 180, 0.4)'
     ]
+    const colorPaletteBorder = [
+        'rgba(255, 99, 132, 0.7)',
+        'rgba(54, 162, 235, 0.7)',
+        'rgba(255, 206, 86, 0.7)',
+        'rgba(75, 192, 192, 0.7)',
+        'rgba(153, 102, 255, 0.7)',
+        'rgba(255, 159, 64, 0.7)',
+        'rgba(200, 0, 0, 0.7)',
+        'rgba(0, 200, 0, 0.7)',
+        'rgba(0, 0, 200, 0.7)',
+        'rgba(200, 200, 0, 0.7)',
+        'rgba(200, 0, 200, 0.7)',
+        'rgba(0, 200, 200, 0.7)',
+        'rgba(100, 100, 100, 0.7)',
+        'rgba(180, 180, 180, 0.7)'
+    ]
 
     new Chart(ctx, {
         type: 'bar',
@@ -70,8 +93,8 @@ function createChart() {
                 {
                     label: 'Number of meals',
                     data: mealsQuantity,
-                    backgroundColor: colorPalette, // 0.2
-                    borderColor: colorPalette, // 1
+                    backgroundColor: colorPalette, // 0.4
+                    borderColor: colorPaletteBorder, // 1
                     borderWidth: 2,
                     borderRadius: 6
                 }

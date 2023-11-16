@@ -211,8 +211,8 @@ nav a:hover {
     display: flex;
     align-items: center;
     gap: 6px;
-    overflow-x: scroll;
     padding: 0.5rem;
+    overflow-x: scroll;
 }
 
 /* Position the arrow */
@@ -239,11 +239,8 @@ nav a:hover {
 
 /* Position favorite meal */
 .fav-meal {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 78px;
     cursor: pointer;
+    width: 78px;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
     background-color: var(--bg1-color);
@@ -259,8 +256,6 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*   ?  justify-content: center;
- */
 }
 
 /* Sizing the img */
@@ -268,7 +263,7 @@ nav a:hover {
     width: 60px;
     height: 60px;
     margin-top: 0.4rem;
-    border-radius: 1rem;
+    border-radius: 0.6rem;
     overflow: hidden;
 }
 
@@ -415,7 +410,8 @@ nav a:hover {
 
 /* Size the meal cards and fix border-radius */
 .meal-card {
-    width: clamp(300px, 30%, 400px);
+    width: 300px;
+    max-width: 400px;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
@@ -441,7 +437,7 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.8rem;
+    padding: 1.5rem;
     font-size: 1.2rem;
     transition: 200ms ease-in-out color;
 }
@@ -449,6 +445,9 @@ nav a:hover {
 /* Make text smaller */
 .meal-name p {
     font-size: 0.8rem;
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* utensils btn */

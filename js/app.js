@@ -122,7 +122,7 @@ function displayMeal(meal) {
     /* shows popup when utensils btn  */
     const utensilsBtn = mealCard.querySelector('.fa-utensils')
     utensilsBtn.addEventListener('click', () => {
-        showMealPopup(meal)
+        showMealInfoPopup(meal)
     })
 
     const favBtn = mealCard.querySelector('.fa-heart')
@@ -142,7 +142,7 @@ function displayMeal(meal) {
     mealCard
         .querySelector('.meal-card-img-container')
         .addEventListener('click', () => {
-            showMealPopup(meal)
+            showMealInfoPopup(meal)
         })
 
     mealsContainer.append(mealCard)
@@ -261,7 +261,7 @@ function displayFavMeal(meal) {
 
     // Shows popup when the img is clicked.
     favMeal.querySelector('.fav-meal-content').addEventListener('click', () => {
-        showMealPopup(meal)
+        showMealInfoPopup(meal)
     })
 
     // The X take it away from fav list and LS
@@ -309,14 +309,10 @@ function removeMealStorage(mealID) {
 }
 
 // Popup function
-function showMealPopup(meal) {
+function showMealInfoPopup(meal) {
     popup.innerHTML = ''
     //  Hide footer when popup comes
     footer.style.display = 'none'
-
-    // Creates the element and adds style
-    const recipePopup = document.createElement('div')
-    recipePopup.classList.add('pop-up-content')
 
     // If there is ingridients --> Push in to array. ELSE break the loop.
     const ingredients = []
@@ -330,7 +326,7 @@ function showMealPopup(meal) {
 
     popupH2.innerText = `${meal.strMeal}`
 
-    recipePopup.innerHTML = `
+    popup.innerHTML = `
         <div class="left-content">
             <div class="meal-card">
                 <div class="meal-card-img-container">
@@ -355,8 +351,6 @@ function showMealPopup(meal) {
             </div>
         </div>
 `
-
-    popup.append(recipePopup)
     popupContainer.style.display = 'flex' // Make it visible
 }
 

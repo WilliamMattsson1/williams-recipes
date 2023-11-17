@@ -117,11 +117,9 @@ addRecipeForm.addEventListener('submit', async () => {
 function myRecipePopup(meal) {
     popup.innerHTML = ''
     footer.style.display = 'none'
-    const newPopup = document.createElement('div')
-    newPopup.classList.add('pop-up-content')
 
     popupH2.innerText = meal.name
-    newPopup.innerHTML = `
+    popup.innerHTML = `
             <div class="left-content">
                 <div class="meal-card">
                     <div class="meal-card-img-container">
@@ -146,8 +144,6 @@ function myRecipePopup(meal) {
                 </div>
             </div>
     `
-
-    popup.append(newPopup) // append and make it visible
     popupContainer.style.display = 'flex'
 }
 
@@ -163,11 +159,9 @@ function editRecipePopup(meal) {
 
     popup.innerHTML = ''
     footer.style.display = 'none'
-    const newPopup = document.createElement('div')
-    newPopup.classList.add('pop-up-content')
 
     popupH2.innerText = meal.name
-    newPopup.innerHTML = `
+    popup.innerHTML = `
     <div class="form-container">
     <h2 class="form-title">Edit the recipe</h2>
     <form id="edit-form">
@@ -225,7 +219,6 @@ Beef - 500g,
     </form>
 </div>
     `
-    popup.append(newPopup) // Append
     popupContainer.style.display = 'flex'
 
     // Takes the new recipe and PUT request it to db

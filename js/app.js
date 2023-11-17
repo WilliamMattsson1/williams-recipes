@@ -164,26 +164,17 @@ async function fetchMealsByCategory(category) {
         )
         const data = await response.json()
         const meals = data.meals
-        mealsContainer.innerHTML = ''
 
+        mealsContainer.innerHTML = '' // Empty from previous.
         console.log(meals)
 
         // get the id and fetch to get all data needed
-        if (meals) {
-            meals.forEach(async (meal) => {
-                const id = meal.idMeal
-                const fetchedMeal = await fetchMealById(id)
-                displayMeal(fetchedMeal)
-            })
-            // Change the text from random meal to this
-            mealsH3.innerText = `Search results for: ${category}`
-        }
-
-        // If there isnt any search results.
-        else {
-            mealsH3.innerText = 'No meals found...'
-            mealsContainer.innerHTML = ''
-        }
+        meals.forEach(async (meal) => {
+            const id = meal.idMeal
+            const fetchedMeal = await fetchMealById(id)
+            displayMeal(fetchedMeal)
+        })
+        mealsH3.innerText = `Search results for: ${category}`
     } catch {
         console.error('Something went wrong: ', error)
     }
@@ -193,11 +184,11 @@ async function fetchMealsByCategory(category) {
 randomBtn.addEventListener('click', () => {
     mealsContainer.innerHTML = ''
     mealsH3.innerText = `Random generated meal`
-    displayRandomMeal()
+    fetchRandomMeal()
 })
 
 // Generate a random meal and calls displayMeal(random)
-async function displayRandomMeal() {
+async function fetchRandomMeal() {
     try {
         const response = await fetch(
             'https://www.themealdb.com/api/json/v1/1/random.php'
@@ -245,8 +236,8 @@ async function fetchMealById(id) {
 // display the favorites
 function displayFavMeal(meal) {
     const favMeal = document.createElement('div')
+    favMeal.classList.add('fav-meal')
     favMeal.innerHTML = `
-            <div class="fav-meal">
                 <div class="fav-meal-content">
                     <div class="fav-meal-img-container">
                         <img src="${meal.strMealThumb}" alt="fav-meal image">
@@ -256,7 +247,6 @@ function displayFavMeal(meal) {
                     </div>
                 </div>
                 <i class="fa-solid fa-x"></i>
-            </div>
     `
 
     // Shows popup when the img is clicked.
@@ -327,15 +317,9 @@ function showMealInfoPopup(meal) {
     popupH2.innerText = `${meal.strMeal}`
 
     popup.innerHTML = `
-        <div class="left-content">
-            <div class="meal-card">
-                <div class="meal-card-img-container">
-                    <img src="${meal.strMealThumb}" alt="recipe foto">
-                </div>
-                <div class="meal-name">
-                    <p>${meal.strMeal}</p>
-                    <i class="fa-regular fa-heart"></i>
-                </div>
+        <div class="left-side-content">
+            <div class="meal-card-img-container">
+                <img src="${meal.strMealThumb}" alt="recipe foto">
             </div>
             <div class="ingredients-div">
                 <h2>Ingredients / Measures</h2>
@@ -345,10 +329,8 @@ function showMealInfoPopup(meal) {
             </div>
         </div>
         <div class="instructions">
-            <div>
                 <h2>Intructions</h2>
                 <p class="meal-info">${meal.strInstructions}</p>
-            </div>
         </div>
 `
     popupContainer.style.display = 'flex' // Make it visible
@@ -361,7 +343,7 @@ closePopupBtn.addEventListener('click', () => {
 })
 
 // Toggle the fav meals
-favArrow.addEventListener('click', () => {
+favContainer.addEventListener('click', () => {
     if (favArrow.classList.contains('fa-arrow-down')) {
         favArrow.setAttribute('class', 'fa-solid fa-arrow-up fav-toggle')
         favContainer.style.height = 'auto'

@@ -120,16 +120,10 @@ function myRecipePopup(meal) {
 
     popupH2.innerText = meal.name
     popup.innerHTML = `
-            <div class="left-content">
-                <div class="meal-card">
+            <div class="left-side-content">
                     <div class="meal-card-img-container">
                         <img src="${meal.img}" alt="recipe foto">
                     </div>
-                    <div class="meal-name">
-                        <p>${meal.name}</p>
-                        <i class="fa-regular fa-heart"></i>
-                    </div>
-                </div>
                 <div class="ingredients-div">
                     <h2>Ingredients / Measures</h2>
                     <p class="meal-info">
@@ -138,10 +132,8 @@ function myRecipePopup(meal) {
                 </div>
             </div>
             <div class="instructions">
-                <div>
                     <h2>Intructions</h2>
                     <p class="meal-info">${meal.instructions}</p>
-                </div>
             </div>
     `
     popupContainer.style.display = 'flex'

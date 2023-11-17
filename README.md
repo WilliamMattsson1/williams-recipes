@@ -7,7 +7,7 @@ _Note: Certain features may not function as expected without the local developme
 ## About the project
 
 This is a recipe website developed with HTML, CSS and Javascript. The recipe data is fetched from TheMealDB API. It also includes a chart created with Chart.js library.
-I also use a local JSON server as a REST API to demonstrate CRUD operations. Uses for GET, POST, PUT and DELETE.
+I also use a local JSON server as a REST API to demonstrate CRUD operations. Uses for GET, POST, PUT and DELETE request.
 
 The main focus in this project is Javascript. To get familiar with: arrays, objects, functions, parameters, template literals, conditional statements, loops, return values, creating and manipulating nodes, events, webstorage and fetching data.
 
@@ -23,19 +23,19 @@ The main focus in this project is Javascript. To get familiar with: arrays, obje
 -   **HTML**
 -   **CSS**
 -   **JavaScript**
--   **TheMealDB API**
--   **JSON Server**
--   **Chart.js**
+-   **TheMealDB API (data)**
+-   **JSON Server (npm package)**
+-   **Chart.js(js library)**
 
 ## Installation and Usage
 
-1. Clone the project to your local machine: `git clone https://github.com/WilliamMattsson1/williams-recipes`
+1. Clone the project to your local machine: `git clone https://github.com/WilliamMattsson1/williams-recipes.git`
 2. Navigate to the project folder: `cd williams-recipes`
 3. Install dependencies: `npm install`
 4. Start the JSON Server: `npm run start`
-5. Open the program in vs code.
-6. Open the program with live-server.
-7. Visit the local server in your browser: http://localhost:3000
+5. Visit the local server in your browser: http://localhost:3000
+6. Open the program in vs code.
+7. Open the program with live-server.
 
 ## CRUD Operations with JSON Server
 

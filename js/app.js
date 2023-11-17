@@ -343,7 +343,7 @@ closePopupBtn.addEventListener('click', () => {
 })
 
 // Toggle the fav meals
-favContainer.addEventListener('click', () => {
+favArrow.addEventListener('click', () => {
     if (favArrow.classList.contains('fa-arrow-down')) {
         favArrow.setAttribute('class', 'fa-solid fa-arrow-up fav-toggle')
         favContainer.style.height = 'auto'

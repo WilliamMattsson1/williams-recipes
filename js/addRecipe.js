@@ -155,61 +155,61 @@ function editRecipePopup(meal) {
     popupH2.innerText = meal.name
     popup.innerHTML = `
     <div class="form-container">
-    <h2 class="form-title">Edit the recipe</h2>
-    <form id="edit-form">
-        <div class="recipe-details">
-            <div class="input-box">
-                <span class="details">Meal name</span>
-                <input
-                    value = "${meal.name}"
-                    type="text"
-                    name="mealName"
-                    placeholder="Enter Your Meals Name..."
-                    required
-                />
+        <h2 class="form-title">Edit the recipe</h2>
+        <form id="edit-form">
+            <div class="recipe-details">
+                <div class="input-box">
+                    <span class="details">Meal name</span>
+                    <input
+                        value = "${meal.name}"
+                        type="text"
+                        name="mealName"
+                        placeholder="Enter Your Meals Name..."
+                        required
+                    />
+                </div>
+                <div class="input-box">
+                    <span class="details">Image Url</span>
+                    <input
+                        value = "${meal.img}"
+                        type="text"
+                        name="mealImgUrl"
+                        placeholder="Enter Your image url..."
+                        required
+                    />
+                </div>
+                <div class="input-box">
+                    <span class="details">Instructions</span>
+                    <textarea
+                        required
+                        name="mealInstructions"
+                        id="instructions"
+                        cols="40"
+                        rows="8"
+                        placeholder="Cut your vegestables in small pieces. Start the oven..."
+                    >${meal.instructions}</textarea>
+                </div>
+                <div class="input-box">
+                    <span class="details">Ingredients</span>
+                    <textarea
+                        required
+                        name="mealIngredients"
+                        id="ingredients"
+                        cols="40"
+                        rows="8"
+                        placeholder="Tomatoes - 2,
+    Beef - 500g,
+    "
+                    >${meal.ingredients}</textarea>
+                </div>
             </div>
-            <div class="input-box">
-                <span class="details">Image Url</span>
-                <input
-                    value = "${meal.img}"
-                    type="text"
-                    name="mealImgUrl"
-                    placeholder="Enter Your image url..."
-                    required
-                />
+            <div class="recipe-btn-container">
+                <button id="submit-edit" type="submit" class="add-recipe-btn">
+                    Edit recipe
+                </button>
             </div>
-            <div class="input-box">
-                <span class="details">Instructions</span>
-                <textarea
-                    required
-                    name="mealInstructions"
-                    id="instructions"
-                    cols="40"
-                    rows="8"
-                    placeholder="Cut your vegestables in small pieces. Start the oven..."
-                >${meal.instructions}</textarea>
-            </div>
-            <div class="input-box">
-                <span class="details">Ingredients</span>
-                <textarea
-                    required
-                    name="mealIngredients"
-                    id="ingredients"
-                    cols="40"
-                    rows="8"
-                    placeholder="Tomatoes - 2,
-Beef - 500g,
-"
-                >${meal.ingredients}</textarea>
-            </div>
-        </div>
-        <div class="recipe-btn-container">
-            <button id="submit-edit" type="submit" class="add-recipe-btn">
-                Edit recipe
-            </button>
-        </div>
-    </form>
-</div>
+        </form>
+    </div>
     `
     popupContainer.style.display = 'flex'
 

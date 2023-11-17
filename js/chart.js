@@ -13,10 +13,8 @@ async function fetchCategories() {
         )
         const data = await response.json()
         const categories = data.meals
-        categoryNames = categories.map(
-            // get the names in the array
-            (category) => category.strCategory
-        )
+        // get the names in the array
+        categoryNames = categories.map((category) => category.strCategory)
 
         // get quantity for every category
         for (let i = 0; i < categoryNames.length; i++) {

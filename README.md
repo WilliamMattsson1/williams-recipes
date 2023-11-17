@@ -23,9 +23,9 @@ The main focus in this project is Javascript. To get familiar with: arrays, obje
 -   **HTML**
 -   **CSS**
 -   **JavaScript**
--   **TheMealDB API (data)**
--   **JSON Server (npm package)**
--   **Chart.js (js library)**
+-   **TheMealDB API** (data)
+-   **JSON Server** (npm package)
+-   **Chart.js** (js library)
 
 ## Installation and Usage
 

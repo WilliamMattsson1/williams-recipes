@@ -519,22 +519,21 @@ footer p {
     inset: 0;
     background-color: grey;
     display: flex;
-    align-items: center;
     justify-content: center;
-
-    /* as default it will be hidden */
-    display: none;
+    align-items: center;
+    display: none; /* as default it will be hidden */
 }
 
 /* Position the pop-up */
 .pop-up {
     width: 90%;
-    max-height: 85vh;
+    max-width: 1000px;
+    max-height: 80vh;
     background-color: var(--bg1-color);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
     color: var(--txt2-color);
-    padding: 3rem;
     margin-top: 4rem;
+    padding: 3rem;
     border-radius: 8px;
     overflow: scroll;
     position: relative;
@@ -549,24 +548,19 @@ footer p {
 /* Style the X */
 .pop-up i {
     position: absolute;
-    right: 20px;
     top: 20px;
-    width: auto;
-    background-color: transparent;
+    right: 20px;
+    width: 2rem;
+    cursor: pointer;
+    background-color: var(--bg1-color);
     color: var(--txt2-color);
     font-size: 1.6rem;
-    cursor: pointer;
 }
 
 /* Make the content left and right  */
 .pop-up-content {
     display: flex;
     gap: 2rem;
-}
-
-/* Make the fav button invisible */
-.pop-up .left-side-content i {
-    display: none;
 }
 
 .left-side-content > div.meal-card-img-container {

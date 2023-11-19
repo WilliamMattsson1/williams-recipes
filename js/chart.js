@@ -1,4 +1,3 @@
-// ! Make sure this is linked with <script> in the about.html
 // * To display how many meals we have for every category
 
 let categoryNames = []
@@ -113,7 +112,7 @@ function createChart() {
                     ticks: {
                         font: {
                             weight: 'bold',
-                            size: 9
+                            size: 10
                         }
                     }
                 }

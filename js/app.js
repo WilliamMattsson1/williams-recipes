@@ -69,7 +69,6 @@ async function showResults() {
     mealsContainer.innerHTML = '' // Empty from previous.
     const searchValue = searchInput.value
     const meals = await fetchMealBySearch(searchValue) // Fetch meals from user input.
-
     console.log(meals)
     // If there is search results display all results
     if (meals) {
@@ -77,20 +76,20 @@ async function showResults() {
             displayMeal(meal)
         })
 
-        // Change the text from random meal to this
-        mealsH3.innerText = `Search results for: ${searchInput.value}`
+        // Change the text to this
+        mealsH3.innerText = `Search results for: ${searchValue}`
     }
 
     // If there isnt any search results.
     else {
-        mealsH3.innerText = 'No meals found...'
+        mealsH3.innerText = `No meals for: ${searchValue}...`
         mealsContainer.innerHTML = ''
     }
     // Clear the input field
     searchInput.value = ''
 }
 
-// Fetch meals by the user input and returns
+// Fetch meals by the user input and return
 async function fetchMealBySearch(input) {
     try {
         const response = await fetch(
@@ -166,7 +165,7 @@ async function fetchMealsByCategory(category) {
         const meals = data.meals
 
         mealsContainer.innerHTML = '' // Empty from previous.
-        console.log(meals)
+        console.log(meals) // log the deatails (only name, id, img)
 
         // get the id and fetch to get all data needed
         meals.forEach(async (meal) => {
@@ -201,6 +200,17 @@ async function fetchRandomMeal() {
         console.error('Something went wrong: ', error)
     }
 }
+
+// Toggle the fav meals
+favArrow.addEventListener('click', () => {
+    if (favArrow.classList.contains('fa-arrow-down')) {
+        favArrow.setAttribute('class', 'fa-solid fa-arrow-up fav-toggle')
+        favContainer.style.height = 'auto'
+    } else {
+        favArrow.setAttribute('class', 'fa-solid fa-arrow-down fav-toggle')
+        favContainer.style.height = '2.4rem'
+    }
+})
 
 async function updateFavMeals() {
     favMealsContainer.innerHTML = ''
@@ -258,7 +268,6 @@ function displayFavMeal(meal) {
     const x = favMeal.querySelector('.fa-x')
     x.addEventListener('click', () => {
         removeMealStorage(meal.idMeal)
-
         // Update the favorite button too
         const heartBtns = document.querySelectorAll('.fa-heart')
         heartBtns.forEach((heartBtn) => {
@@ -274,7 +283,7 @@ function displayFavMeal(meal) {
     favMealsContainer.append(favMeal)
 }
 
-// Get the local storage if there is something there.
+// Get the local storage ids if there is something there.
 function getMealStorage() {
     const mealIds = JSON.parse(localStorage.getItem('mealIds'))
     if (mealIds !== null) {
@@ -340,17 +349,6 @@ function showMealInfoPopup(meal) {
 closePopupBtn.addEventListener('click', () => {
     popupContainer.style.display = 'none'
     footer.style.display = 'block'
-})
-
-// Toggle the fav meals
-favArrow.addEventListener('click', () => {
-    if (favArrow.classList.contains('fa-arrow-down')) {
-        favArrow.setAttribute('class', 'fa-solid fa-arrow-up fav-toggle')
-        favContainer.style.height = 'auto'
-    } else {
-        favArrow.setAttribute('class', 'fa-solid fa-arrow-down fav-toggle')
-        favContainer.style.height = '2.4rem'
-    }
 })
 
 updateFavMeals()

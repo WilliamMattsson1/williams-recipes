@@ -9,7 +9,7 @@ _Note: Certain features may not function as expected without the local developme
 This is a recipe website developed with HTML, CSS and Javascript. The recipe data is fetched from TheMealDB API. It also includes a chart created with Chart.js library.
 I also use a local JSON server as a REST API to demonstrate CRUD operations. Uses for GET, POST, PUT and DELETE request.
 
-The main focus in this project is Javascript. To get familiar with: arrays, objects, functions, parameters, template literals, conditional statements, loops, return values, creating and manipulating nodes, events, webstorage and fetching data.
+The main focus with this project is Javascript. For me to get familiar with: arrays, objects, functions, parameters, template literals, conditional statements, loops, return values, creating and manipulating nodes, events, webstorage and fetching data.
 
 ## Features
 

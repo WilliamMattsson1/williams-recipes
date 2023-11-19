@@ -11,7 +11,7 @@
 /* * 10. Add Recipe - addRecipe-html */
 
 /* * 1. General (font, *, body, html, var) */
-@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
     margin: 0;
@@ -38,7 +38,6 @@ html {
     /* second set of colors */
     --bg2-color: #352f44;
     --txt2-color: #000000;
-    /* ! Byt ut tct2 color till en bra mörk färg.  */
 }
 
 /* Toggle this class when mode button clicks (changes colors) */
@@ -260,24 +259,26 @@ nav a:hover {
 
 /* Sizing the img */
 .fav-meal-img-container {
-    width: 60px;
+    width: 70px;
     height: 60px;
     margin-top: 0.4rem;
-    border-radius: 0.6rem;
+    border-radius: 0.4rem;
     overflow: hidden;
 }
 
 /* Position the img right */
 .fav-meal-img-container img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Fix overflow */
 .fav-meal-text p {
     width: 80px;
     font-size: 0.7rem;
-    padding-left: 0.4rem;
-    white-space: nowrap;
+    padding-left: 0.3rem;
+    text-wrap: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
     color: var(--txt2-color);
@@ -288,9 +289,8 @@ nav a:hover {
 .fa-x {
     color: white;
     background-color: var(--txt1-color);
-    border-bottom-right-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
     width: 100%;
+    border-radius: 0 0 0.5rem 0.5rem;
     padding: 0.6rem;
 }
 
@@ -315,7 +315,7 @@ nav a:hover {
     margin: auto;
     text-align: center;
     border-radius: 8px;
-    padding: 1rem;
+    padding: 0.6rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
@@ -519,8 +519,8 @@ footer p {
     inset: 0;
     background-color: grey;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     display: none; /* as default it will be hidden */
 }
 
@@ -560,7 +560,7 @@ footer p {
 /* Make the content left and right  */
 .pop-up-content {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .left-side-content > div.meal-card-img-container {
@@ -572,7 +572,7 @@ footer p {
 }
 
 .ingredients-div {
-    margin-top: 1.6rem;
+    margin-top: 1rem;
 }
 
 /* Moves the bulletpoints */

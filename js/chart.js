@@ -1,3 +1,4 @@
+// * JS for chart at about page
 // * To display how many meals we have for every category
 
 let categoryNames = []
